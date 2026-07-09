@@ -77,7 +77,6 @@ SECTIONS = [
         "subtitle": "K-fashion, idol style & Seoul street",
         "category": "fashion",
         "feeds": [
-            ("Hypebeast KR", "https://hypebeast.kr/feed"),
             ("GNews K-Fashion", "https://news.google.com/rss/search?q=Korean+fashion+K-fashion+Seoul+style+2026&hl=en&gl=US&ceid=US:en"),
             ("GNews Seoul Street", "https://news.google.com/rss/search?q=Seoul+street+style+trends&hl=en&gl=KR&ceid=KR:en"),
         ],
@@ -180,6 +179,25 @@ def fetch_feed(source, url):
     except Exception as exc:
         return source, url, [], False, type(exc).__name__
 
+
+
+OG_RE = re.compile(r'<meta[^>]+(?:property|name)=["\'](og:image|twitter:image)["\']\s+content=["\'](https?://[^\"\' >]+)["\'\s]', re.I)
+OG_RE2 = re.compile(r'<meta[^>]+content=["\'](https?://[^\"\' >]+)["\']\s+(?:property|name)=["\'](og:image|twitter:image)["\'\s]', re.I)
+
+
+def fetch_og_image(url):
+    try:
+        r = requests.get(url, timeout=8, headers={"User-Agent": UA}, allow_redirects=True, stream=True)
+        chunk = r.raw.read(80000).decode("utf-8", errors="ignore")
+        r.close()
+        for pat in (OG_RE, OG_RE2):
+            m = pat.search(chunk)
+            if m:
+                groups = m.groups()
+                return groups[1] if groups[0].startswith("og:") or groups[0].startswith("twitter:") else groups[0]
+    except Exception:
+        pass
+    return ""
 
 # ---------------------------------------------------------------- hotness
 
@@ -322,6 +340,15 @@ def collect():
         dated = sorted((a for a in articles if a["dt"]), key=lambda a: a["dt"], reverse=True)
         undated = [a for a in articles if not a["dt"]]
         selected = dated[:MAX_PER_SECTION] + undated[:3]
+        # Fetch og:image for articles without thumbnails
+        need_img = [a for a in selected[:MAX_PER_SECTION] if not a["thumb"]]
+        if need_img:
+            with ThreadPoolExecutor(max_workers=8) as imgpool:
+                futs = {imgpool.submit(fetch_og_image, a["link"]): a for a in need_img}
+                for fut in as_completed(futs):
+                    img = fut.result()
+                    if img:
+                        futs[fut]["thumb"] = img
         sections_out.append({**section, "articles": selected[:MAX_PER_SECTION]})
 
     return sections_out, diagnostics
