@@ -181,20 +181,25 @@ def fetch_feed(source, url):
 
 
 
-OG_RE = re.compile(r'<meta[^>]+(?:property|name)=["\'](og:image|twitter:image)["\']\s+content=["\'](https?://[^\"\' >]+)["\'\s]', re.I)
-OG_RE2 = re.compile(r'<meta[^>]+content=["\'](https?://[^\"\' >]+)["\']\s+(?:property|name)=["\'](og:image|twitter:image)["\'\s]', re.I)
 
 
 def fetch_og_image(url):
+    """Fetch og:image from article page."""
     try:
         r = requests.get(url, timeout=8, headers={"User-Agent": UA}, allow_redirects=True, stream=True)
-        chunk = r.raw.read(80000).decode("utf-8", errors="ignore")
+        html = r.raw.read(80000).decode("utf-8", errors="ignore")
         r.close()
-        for pat in (OG_RE, OG_RE2):
-            m = pat.search(chunk)
-            if m:
-                groups = m.groups()
-                return groups[1] if groups[0].startswith("og:") or groups[0].startswith("twitter:") else groups[0]
+        # Try multiple patterns
+        for pat in [
+            r'property="og:image"[^>]+content="([^"]+)"',
+            r'content="([^"]+)"[^>]+property="og:image"',
+            r"property='og:image'[^>]+content='([^']+)'",
+            r'name="twitter:image"[^>]+content="([^"]+)"',
+            r'content="([^"]+)"[^>]+name="twitter:image"',
+        ]:
+            m = re.search(pat, html, re.IGNORECASE)
+            if m and m.group(1).startswith("http"):
+                return m.group(1)
     except Exception:
         pass
     return ""
