@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Pulse — Fashion · Tech · Travel — Jul 09, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#FAFAF8; --fg:#111; --rose:#9B2335; --sand:#C4A97D;
+  --mute:rgba(17,17,17,.55); --line:rgba(17,17,17,.12); --card-bg:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:'DM Sans',sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+header.mast{padding:32px 0 18px;border-bottom:2px solid var(--fg)}
+header.mast .wrap{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+h1{font-family:'DM Serif Display',serif;font-size:44px;letter-spacing:-.02em}
+h1 em{color:var(--rose);font-style:italic}
+.meta{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--mute);text-align:right}
+.refresh{display:inline-block;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  border:1px solid var(--rose);color:var(--rose);padding:4px 10px}
+.refresh:hover{background:var(--rose);color:#fff}
+nav.tabs{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--fg)}
+nav.tabs .wrap{display:flex;gap:2px;overflow-x:auto}
+.tab{font-family:'JetBrains Mono',monospace;font-size:12px;background:none;border:none;
+  border-bottom:3px solid transparent;color:var(--mute);padding:12px 14px 9px;cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--fg)}
+.tab.active{color:var(--fg);border-bottom-color:var(--rose);font-weight:500}
+.panel{display:none;padding:36px 0 8px}
+.panel.active{display:block}
+.sec-hd{max-width:1280px;margin:0 auto 16px;padding:0 28px;display:flex;align-items:center;gap:16px}
+.sec-hd h2{font-family:'DM Serif Display',serif;font-size:26px;white-space:nowrap}
+.rule{flex:1;height:1px;background:var(--fg);position:relative}
+.rule::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;background:var(--rose)}
+.sec-brief{max-width:1280px;margin:-4px auto 20px;padding:0 28px;font-size:14px;color:var(--mute);
+  border-left:3px solid var(--sand);padding-left:14px}
+.grid{max-width:1280px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1080px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}h1{font-size:30px}.meta{text-align:left}}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--card-bg)}
+.card-sm{}
+.thumb{aspect-ratio:16/9;background-size:cover;background-position:center;border-bottom:1px solid var(--line)}
+.thumb-empty{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f0ede6 0%,#e8e4db 100%)}
+.thumb-empty span{font-family:'DM Serif Display',serif;font-size:18px;color:var(--sand);letter-spacing:.1em}
+.card-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card-meta{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.src{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--rose)}
+.badge{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--sand);border:1px solid var(--sand);
+  padding:1px 5px;letter-spacing:.04em;white-space:nowrap}
+.card h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:16px;line-height:1.3}
+.card h3 a:hover{text-decoration:underline;text-decoration-color:var(--rose)}
+.card p{font-size:13px;color:var(--mute);flex:1}
+.card time{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute)}
+.home-sec{max-width:1280px;margin:0 auto;padding:36px 28px 0}
+.home-sec h2{font-family:'DM Serif Display',serif;font-size:26px;margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.home-sec h2::after{content:"";flex:1;height:1px;background:var(--fg)}
+.cat-group{margin-bottom:32px}
+.cat-title{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:4px;color:var(--fg);
+  border-bottom:2px solid var(--rose);display:inline-block;padding-bottom:4px}
+.snapshots{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;margin-top:16px}
+.snapshot{border:1px solid var(--line);background:var(--card-bg);padding:20px}
+.snap-head{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.snap-head h3{font-family:'DM Serif Display',serif;font-size:20px}
+.snap-link{font:inherit;background:none;border:none;cursor:pointer;color:var(--fg)}
+.snap-link:hover{text-decoration:underline;text-decoration-color:var(--rose)}
+.snap-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute)}
+.snap-brief{font-size:13px;color:var(--mute);margin-bottom:12px;border-left:2px solid var(--sand);padding-left:10px}
+.snap-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:640px){.snap-cards{grid-template-columns:1fr}}
+.snap-cards .card{border:none;border-top:1px solid var(--line)}
+.snap-cards .thumb{aspect-ratio:4/3}
+.snap-cards .card h3{font-size:14px}
+.snap-cards .card p{display:none}
+.snap-more{display:block;width:100%;margin-top:12px;padding:8px;font-family:'JetBrains Mono',monospace;
+  font-size:11.5px;background:none;border:1px solid var(--line);color:var(--rose);cursor:pointer;text-align:center}
+.snap-more:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+.slide-nav{max-width:1280px;margin:-4px auto 12px;padding:0 28px;display:flex;align-items:center;gap:10px}
+.sl-btn{font-size:15px;width:28px;height:28px;border:1px solid var(--fg);background:var(--card-bg);cursor:pointer}
+.sl-btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+.sl-hint{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--mute)}
+.slide-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth}
+.slide-track::-webkit-scrollbar{height:5px}
+.slide-track::-webkit-scrollbar-thumb{background:var(--line)}
+.slide-page{flex:0 0 100%;scroll-snap-align:start}
+.note{max-width:1280px;margin:16px auto 0;padding:0 28px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute)}
+.empty{max-width:1280px;margin:0 auto;padding:0 28px;color:var(--mute);font-size:14px}
+footer{margin-top:48px;border-top:2px solid var(--fg);padding:24px 0 36px;font-size:13px}
+footer h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+details{margin-top:12px}
+summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--mute)}
+.diag{list-style:none;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.9}
+.diag .ok{color:#48583F}.diag .err{color:#8a3324}
+.durl{opacity:.45}
+.disc{margin-top:12px;color:var(--mute)}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <h1>The <em>Pulse</em></h1>
+    <div class="meta">
+      July 09, 2026 · 04:46 UTC<br>Auto-updated daily<br>
+      <a class="refresh" href="https://github.com/trangtranadtima-cmd/the-pulse/actions/workflows/update.yml" target="_blank" rel="noopener">⟳ Update now</a>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs"><div class="wrap"><button class="tab active" data-target="tab-home">Overview</button><button class="tab" data-target="tab-vietnam">🇻🇳 Vietnam</button><button class="tab" data-target="tab-singapore">🇸🇬 Singapore</button><button class="tab" data-target="tab-australia">🇦🇺 Australia</button><button class="tab" data-target="tab-usa">🇺🇸 USA</button><button class="tab" data-target="tab-korea">🇰🇷 Korea</button><button class="tab" data-target="tab-tech-ai">💻 Tech &amp; AI</button><button class="tab" data-target="tab-travel">✈️ Travel</button></div></nav>
+
+<main>
+  <section class="panel active" id="tab-home">
+    <div class="home-sec">
+      <h2>Top Picks</h2>
+      <div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>HI</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Highsnobiety</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.highsnobiety.com/p/new-balance-880r-black/" target="_blank" rel="noopener">New Balance&#x27;s Youngest Dad Shoe Is in Touch With Its Dark Side</a></h3>
+          <p>New Balance just dipped its brand spanking new 880R dad shoe in jet black ink &amp; its never looked better.</p>
+          <time>Jul 09 · 04:09</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4ee1107f29a64f1274c945/master/pass/PARISCOUTUREFW26_STREETSTYLE_DAY3_PHILOH_03.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.vogue.com/slideshow/phil-ohs-best-street-style-photos-from-the-fall-2026-couture-shows-in-paris" target="_blank" rel="noopener">The Best Street Style Photos From the Fall 2026 Couture Shows</a></h3>
+          <p>Photographer Phil Oh captures the drama and frivolity in Paris as designers present their fall 2026 couture collections.</p>
+          <time>Jul 08 · 23:50</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fnew-balance-aime-leon-dore-performance-running-capsule-release-info-ss26-0.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/new-balance-aime-leon-dore-performance-running-capsule-release-info" target="_blank" rel="noopener">Aimé Leon Dore와 New Balance, SS26 러닝 캡슐로 여름 트레이닝 시즌 정조준</a></h3>
+          <p>요약Aimé Leon Dore와 New Balance가 다시 한 번 한정판 퍼포먼스 러닝 캡슐 컬렉션을 선보인다. 이번 드롭은 일상적인 트레이닝용 FuelCell Rebel v5와 레이스에 최적화된 SC Elite v5 실루엣을 협업 에디션으로 담아냈다. 이 종합적인 컬렉션은 향후 스니커즈의 본격적인 롤아웃에 앞서, 7월 9일 Aimé Leon Dore…</p>
+          <time>Jul 08 · 20:38</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fcharli-xcx-intersects-music-fashion-and-film-for-upcoming-album-listening-sessions-news-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/charli-xcx-intersects-music-fashion-and-film-for-upcoming-album-listening-sessions-news" target="_blank" rel="noopener">Charli XCX, 음악·패션·영화를 잇는 뉴 앨범 리스닝 세션 월드 투어</a></h3>
+          <p>요약 Charli XCX가 다층적인 크리에이티브를 한데 모은 독점 앨범 리스닝 세션 시리즈를 선보일 예정이다.다가오는 2026년 이니셔티브는 컨템포러리 팝 사운드, 하이패션 프레젠테이션, 시네마틱 필름 요소가 한 공간에서 직접 교차하는 실험적 플랫폼을 중심에 둔다.Variety 공식 보도에 따르면, 이 팝 아이콘은 이번 프로젝트를 통해 전통적인 앨범…</p>
+          <time>Jul 08 · 18:31</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.elle.vn/bo-suu-tap/chanel-haute-couture-thu-dong-2026/" target="_blank" rel="noopener">Chanel Haute Couture Thu-Đông 2026: Cổ tích dưới tán cây đậu thần</a></h3>
+          <p>Sau chuyến ghé thăm thư viện riêng của Gabrielle Chanel, Matthieu Blazy tìm thấy nguồn cảm hứng trong những câu chuyện cổ của Charles Perrault. Từ đó, một bộ sưu tập haute couture mộng mơ đã ra đời.…</p>
+          <time>Jul 08 · 13:57</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.russh.com/lions-gate-portal/" target="_blank" rel="noopener">What you need to know about the Lion’s Gate Portal in 2026</a></h3>
+          <p>A time to manifest. The post What you need to know about the Lion’s Gate Portal in 2026 appeared first on RUSSH .</p>
+          <time>Jul 08 · 06:45</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.russh.com/charli-xcx-eighth-studio-album/" target="_blank" rel="noopener">The tracklist for Charli XCX’s’Music, Fashion, Film’ deserves a national holiday</a></h3>
+          <p>Leave it to Charli to surprise us. The post The tracklist for Charli XCX’s’Music, Fashion, Film’ deserves a national holiday appeared first on RUSSH .</p>
+          <time>Jul 08 · 02:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/fashion/runway/dior-haute-couture-fall-winter-2026-show" target="_blank" rel="noopener">A New Shape Of Romance Takes Place At Dior’s Haute Couture Show</a></h3>
+          <p>Fresh from the Taylor Swift wedding coup, Dior returned to couture with more art-school provocation, texture and tension.</p>
+          <time>Jul 07 · 06:35</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/celebrity/lena-schuett-things-to-know" target="_blank" rel="noopener">8 Things To Know About Lena Lorena Schuett</a></h3>
+          <p>An it girl on the rise.</p>
+          <time>Jul 07 · 02:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE83MzNqSlc5eDJxcDRnR0dQVXctdjMwWU5mTmNTUGU4Yzl0TmRjUktLUHBpRld2Q3Bfa0VsSHhqQ2hBdkRiRkFBbG5aN1E5R3pzYVU2aUFISE14RTBxSEFNbm12N1FwTWlwZ3IwUHRR?oc=5" target="_blank" rel="noopener">Vietnam Partners With Singapore, Japan, Malaysia and Thailand to Reinforce Border Health Security With New Disease Prevention Rules That Could Affect Future Travel—Here’s What You Need to Know</a></h3>
+          <p>Vietnam Partners With Singapore, Japan, Malaysia and Thailand to Reinforce Border Health Security With New Disease Prevention Rules That Could Affect Future Travel—Here’s What You Need to Know Travel…</p>
+          <time>Jul 03 · 04:28</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Travel Blogs</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBZNnJCWklScXg1Z0FUcEdud2F5WTByVkh3WmFBVzdFakZXYnp4REFnSjRfdDZjXzFjYzgtc1BLUnF1U2I2R3M2WGxsQ1pvSDFsY3dNUG5uX29YXzlXd2FZYWJSTzdYOGZGaFYxX2lkVzRKRjhYdExHSTlLQUJBUQ?oc=5" target="_blank" rel="noopener">13 best places to visit in November, according to the travel editors</a></h3>
+          <p>13 best places to visit in November, according to the travel editors CN Traveller</p>
+          <time>Jul 02 · 17:44</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews VN Streetwear</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNTEJZejJxRkxWOTh4SzNfLV8tMEJDWEp1d0FFaXF5SmZJVC1kUm1FaVlOM28xZmtuV1dsTDN6UWdMTTRlUHdidXB5MEpKd3V6OWRUM0tvbUREY1Q1RC1Hci1rZzh0R1dfSHJzSjlRV3hSSG9fSmhKZzVxSHQ5LW1SNW5kalB2WWRsRHF5V2dSY1V0ZHlFdDVUVjgtTDNBang5NFE?oc=5" target="_blank" rel="noopener">4 xu hướng thời trang nam từ Paris Fashion Week Xuân Hè 2027</a></h3>
+          <p>4 xu hướng thời trang nam từ Paris Fashion Week Xuân Hè 2027 L&#x27;Officiel VIETNAM</p>
+          <time>Jul 02 · 03:39</time>
+        </div>
+      </article></div>
+    </div>
+    <div class="home-sec">
+      <h2>By Market</h2>
+      <div class="snapshots"><div class="cat-group">
+        <h3 class="cat-title">👗 Fashion</h3>
+        <div class="snapshots"><div class="snapshot">
+        <div class="snap-head">
+          <h3><button class="snap-link" data-target="tab-vietnam">🇻🇳 Vietnam</button></h3>
+          <span class="snap-sub">Local brands &amp; street style</span>
+        </div>
+        <p class="snap-brief">Trending: &quot;thời trang&quot;. Latest: 4 kiểu váy cho buổi brunch “nịnh dáng” chuẩn gu nàng thị thành… (Elle Vietnam)</p>
+        <div class="snap-cards"><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/fashion/vay-brunch-xinh-2026/" target="_blank" rel="noopener">4 kiểu váy cho buổi brunch “nịnh dáng” chuẩn gu nàng thị thành</a></h3>
+          
+          <time>Jul 09 · 03:00</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/bi-quyet-song/9-thuc-pham-giup-xoa-diu-cam-giac-lo-au-trong-ban/" target="_blank" rel="noopener">9 thực phẩm giúp xoa dịu cảm giác lo âu trong bạn</a></h3>
+          
+          <time>Jul 09 · 01:00</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/cung-hoang-dao/tu-vi-ngay-09-07-2026/" target="_blank" rel="noopener">Tử vi ngày 09/07/2026: 5 con giáp tìm thấy vận may trong cách chăm chút lại đời sống thường ngày</a></h3>
+          
+          <time>Jul 09 · 00:00</time>
+        </div>
+      </article></div>
+        <button class="snap-more" data-target="tab-vietnam">See all Vietnam →</button>
+      </div><div class="snapshot">
+        <div class="snap-head">
+          <h3><button class="snap-link" data-target="tab-singapore">🇸🇬 Singapore</button></h3>
+          <span class="snap-sub">Southeast Asian fashion hub</span>
+        </div>
+        <p class="snap-brief">Latest: Tiffany &amp; Co.’s Modern Jewellery Icons Are Made To Move With You… (Harper&#x27;s Bazaar SG)</p>
+        <div class="snap-cards"><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/jewels-watches/jewellery/tiffany-co-fine-jewellery" target="_blank" rel="noopener">Tiffany &amp; Co.’s Modern Jewellery Icons Are Made To Move With You</a></h3>
+          
+          <time>Jul 08 · 02:00</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/en/celebrity/from-jimin-to-ji-chang-wook-see-which-korean-stars-are-designer-brand-ambassadors" target="_blank" rel="noopener">The A</a></h3>
+          
+          <time>Jul 07 · 08:00</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/fashion/runway/dior-haute-couture-fall-winter-2026-show" target="_blank" rel="noopener">A New Shape Of Romance Takes Place At Dior’s Haute Couture Show</a></h3>
+          
+          <time>Jul 07 · 06:35</time>
+        </div>
+      </article></div>
+        <button class="snap-more" data-target="tab-singapore">See all Singapore →</button>
+      </div><div class="snapshot">
+        <div class="snap-head">
+          <h3><button class="snap-link" data-target="tab-australia">🇦🇺 Australia</button></h3>
+          <span class="snap-sub">Relaxed luxury &amp; resort</span>
+        </div>
+        <p class="snap-brief">Latest: Australians Refresh Their Winter Wardrobes with SHEIN as Seasonal… (GNews AU Fashion)</p>
+        <div class="snap-cards"><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews AU Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxNVEk1cGdBZzNlMkV1UlMzc0lGU0JTamNBb0ZOMUF1bzl5NlZVR2t1Yl85bDlURlg5T2F3Qms1ZnBjN3prdGRBU3B5OVlVS1FRNVJvMUFxVmZmU1locVp2SFUyXy1pUzBXc09uZTlIOExBQ1NyVkNENE5rRWFxZ3hleGlUQVN3LUJ6MTVrVDhabWt2QTdOTnY4ZVFKYWxHVk5ZWDBJMHpRMDdWZE5lQ3dFUDUtS3ZLWWJEOThxdVYwNmU3STc4OUVtM295OGFvVVc3MXFscDM4WHlfSUVqWXBWay1Sb2NlS2s4d21BdVZvbENqUmRScVppWNIB_gFBVV95cUxOQWRqdnVybmRWTWtta0xQMEloTy1URjZRTnJpaHpNWlJYQS1TSE9jNmU0TmNqclVlZXJCMXA0LWRnMnhQeWNUbXJyWmotUDVaUU52S0tNcC0zeHJta0hXUnI5Z09PdXBtcDFyQTRGVm5HVElDb3IzbTZFajBlNnFzMkRxOFh4T3ozWE1MdE1uaGd2dWhPYmt2cjN5dURkaWJsU3VtWVE0M3kwZVlQeHJWdGhuUXExTEdzZlFESTJQc0VGby1IbXVMSlJOU2FwcWhNZnJvYVVWV1dZY2M2d1hqN3d4NmNUZ012eV9Hb1NJclJ0alczdmkwWjl1RGVpdw?oc=5" target="_blank" rel="noopener">Australians Refresh Their Winter Wardrobes with SHEIN as Seasonal Fashion Trends Take Shape</a></h3>
+          
+          <time>Jul 09 · 01:17</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/emmy-nominations-2026-snubs-surprises/" target="_blank" rel="noopener">The biggest snubs and surprises from the 2026 Emmy nominations</a></h3>
+          
+          <time>Jul 08 · 21:06</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/australian-activewear-brands/" target="_blank" rel="noopener">16 of the best Australian activewear brands primed for your next gym session</a></h3>
+          
+          <time>Jul 08 · 07:30</time>
+        </div>
+      </article></div>
+        <button class="snap-more" data-target="tab-australia">See all Australia →</button>
+      </div><div class="snapshot">
+        <div class="snap-head">
+          <h3><button class="snap-link" data-target="tab-usa">🇺🇸 USA</button></h3>
+          <span class="snap-sub">Runway, streetwear &amp; pop culture</span>
+        </div>
+        <p class="snap-brief">Latest: Jean Paul Gaultier Fall 2026 Couture… (Vogue US)</p>
+        <div class="snap-cards"><article class="card card-sm">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4eb715a3690677487ae123/master/pass/00001-jean-paul-gaultier-fall-2026-couture-credit-brand.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/jean-paul-gaultier" target="_blank" rel="noopener">Jean Paul Gaultier Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4ebb913d2ee69032a050e4/master/pass/00001-manish-malhotra-fall-2026-couture-credit-gorunway.JPG')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/manish-malhotra" target="_blank" rel="noopener">Manish Malhotra Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4e8d865f3a86db799adc50/master/pass/00001-viktor-and-rolf-fall-2026-couture-credit-brand.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/viktor-rolf" target="_blank" rel="noopener">Viktor &amp; Rolf Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article></div>
+        <button class="snap-more" data-target="tab-usa">See all USA →</button>
+      </div><div class="snapshot">
+        <div class="snap-head">
+          <h3><button class="snap-link" data-target="tab-korea">🇰🇷 Korea</button></h3>
+          <span class="snap-sub">K-fashion, idol style &amp; Seoul street</span>
+        </div>
+        <p class="snap-brief">Latest: 2026 프라임타임 에미상 후보 총정리: 2026년 노미네이션 풀 리스트… (Hypebeast KR)</p>
+        <div class="snap-cards"><article class="card card-sm">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2F2026-78th-primetime-emmy-awards-nominees-full-list-1.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/2026-78th-primetime-emmy-awards-nominees-full-list" target="_blank" rel="noopener">2026 프라임타임 에미상 후보 총정리: 2026년 노미네이션 풀 리스트</a></h3>
+          
+          <time>Jul 09 · 03:59</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fseiko-presage-cocktail-time-three-new-crushed-ice-creations-release-info-1.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/seiko-presage-cocktail-time-three-new-crushed-ice-creations-hcb001-mint-mist-hcb002-emerald-mist-hcb003-whisky-mist-release-info" target="_blank" rel="noopener">세이코 프레사지 칵테일 타임, ‘크러시드 아이스’ 텍스처로 업그레이드</a></h3>
+          
+          <time>Jul 09 · 02:15</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Flego-pokemon-rayquaza-kit-release-info-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/lego-pokemon-rayquaza-kit-release-info" target="_blank" rel="noopener">LEGO, 웅장한 포켓몬 레쿠쟈 브릭 키트 출시 준비 중</a></h3>
+          
+          <time>Jul 08 · 21:35</time>
+        </div>
+      </article></div>
+        <button class="snap-more" data-target="tab-korea">See all Korea →</button>
+      </div></div></div><div class="cat-group">
+        <h3 class="cat-title">💻 Tech & AI</h3>
+        <div class="snapshots"><div class="snapshot">
+        <div class="snap-head">
+          <h3><button class="snap-link" data-target="tab-tech-ai">💻 Tech &amp; AI</button></h3>
+          <span class="snap-sub">Innovation, AI breakthroughs &amp; the tech industry</span>
+        </div>
+        <p class="snap-brief">Latest: Truecaller clashes with India’s telecom regulator over anti… (TechCrunch)</p>
+        <div class="snap-cards"><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/truecaller-clashes-with-indias-telecom-regulator-over-anti-spam-rules/" target="_blank" rel="noopener">Truecaller clashes with India’s telecom regulator over anti</a></h3>
+          
+          <time>Jul 09 · 02:30</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb" style="background-image:url('https://media.wired.com/photos/6a4eda84351e3bcb2e38a372/master/pass/GettyImages-2262457818.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Wired</span></div>
+          <h3><a href="https://www.wired.com/story/one-of-metas-offices-was-briefly-overtaken-by-a-rogue-squirrel/" target="_blank" rel="noopener">One of Meta’s Offices Was Briefly Overtaken by a Rogue Squirrel</a></h3>
+          
+          <time>Jul 08 · 23:53</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/despite-misgivings-judge-approves-elon-musks-1-5-million-sec-settlement/" target="_blank" rel="noopener">Despite ‘misgivings,’ judge approves Elon Musk’s $1.5M SEC settlement</a></h3>
+          
+          <time>Jul 08 · 23:11</time>
+        </div>
+      </article></div>
+        <button class="snap-more" data-target="tab-tech-ai">See all Tech & AI →</button>
+      </div></div></div><div class="cat-group">
+        <h3 class="cat-title">✈️ Travel</h3>
+        <div class="snapshots"><div class="snapshot">
+        <div class="snap-head">
+          <h3><button class="snap-link" data-target="tab-travel">✈️ Travel</button></h3>
+          <span class="snap-sub">Destinations, experiences &amp; travel blogs</span>
+        </div>
+        <p class="snap-brief">Trending: &quot;best places visit&quot;. Latest: Laos Overtakes Japan, China, Thailand And More Countries As South… (GNews Asia Travel)</p>
+        <div class="snap-cards"><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5zREQ1UkxQUWpvV1Jyb0htRUpPeE1IUnVTQ2xTTnZlSThtLWdQckpXNk41S3lnM0p1TWNfTE1PeEdiVHlvcHM0UWpkdElHNGNLTk9zcHJWUmxhMEdONDJ0UjlxLWx5ek0tWTVINTd3?oc=5" target="_blank" rel="noopener">Laos Overtakes Japan, China, Thailand And More Countries As Southeast Asia’s New Tourism Powerhouse Welcomes Over Two Million International Visitors In 2026, Triggering A Historic Travel Boom And Accelerating Unprecedented Growth</a></h3>
+          
+          <time>Jul 09 · 03:34</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1UZzM0cGlEbUhBZEFhYk41SGs2S2s3T2drU0RaTlVPZ1IxdFEwTkNGdGM1LXhVdzJFZjlqLVVxazhwZU5UdGN4Z28wOWpPXzVObThOMGxoZ0xRdHRMakJjeG9LVW40Z3NjZHVnMTJn?oc=5" target="_blank" rel="noopener">China Aligns With South Korea, Japan, Australia, and More as Vietnam Targets Twenty-Five Million International Visitors in 2026 Amid Strong Tourism Growth</a></h3>
+          
+          <time>Jul 08 · 05:49</time>
+        </div>
+      </article><article class="card card-sm">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9QeUpneWZraGlDMEVZa0V5SE9oWGxmQzNDR0NuNnRreEVybnJlNkljYkpqU3lVSVhiU21ld0ZTMlZETXJfZlpKYXk0dXVCZThjbDEzRHQ2bGRFN09oVDI3UEl2Yml3eGRDTmxfWkRB?oc=5" target="_blank" rel="noopener">China Aligns With Vietnam, Taiwan, Japan, Hong Kong and More as South Korea’s Tourism Recovery Gains Momentum, Driving Massive International Visitor Growth Across Seoul, Busan and Regional Destinations</a></h3>
+          
+          <time>Jul 07 · 07:15</time>
+        </div>
+      </article></div>
+        <button class="snap-more" data-target="tab-travel">See all Travel →</button>
+      </div></div></div></div>
+    </div>
+    <p class="note">Headlines sourced from RSS feeds of fashion publications. "N sources" badge = topic covered by multiple outlets. Tap any market card to explore more.</p>
+  </section>
+  <section class="panel" id="tab-vietnam">
+        <header class="sec-hd"><h2>🇻🇳 Vietnam</h2><span class="rule"></span></header>
+        <p class="sec-brief">Trending: &quot;thời trang&quot;. Latest: 4 kiểu váy cho buổi brunch “nịnh dáng” chuẩn gu nàng thị thành… (Elle Vietnam)</p>
+        <div class="slide-nav"><button class="sl-btn prev">‹</button><span class="sl-hint">Swipe or tap arrows for more</span><button class="sl-btn next">›</button></div><div class="slide-track"><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/fashion/vay-brunch-xinh-2026/" target="_blank" rel="noopener">4 kiểu váy cho buổi brunch “nịnh dáng” chuẩn gu nàng thị thành</a></h3>
+          <p>Giữa guồng quay hối hả của đô thị, brunch cuối tuần dần trở thành thói quen đẹp, một khoảng lặng nhẹ nhàng để các quý cô thành thị tạm gác lo toan, thưởng thức món ngon và trò chuyện cùng những người…</p>
+          <time>Jul 09 · 03:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/bi-quyet-song/9-thuc-pham-giup-xoa-diu-cam-giac-lo-au-trong-ban/" target="_blank" rel="noopener">9 thực phẩm giúp xoa dịu cảm giác lo âu trong bạn</a></h3>
+          <p>Thực đơn hằng ngày không chỉ nuôi dưỡng cơ thể mà còn có thể tác động đến não bộ và cảm xúc. Từ cá hồi, trà xanh đến socola đen hay sữa chua, những thực phẩm giàu omega-3, chất chống oxy hóa và lợi…</p>
+          <time>Jul 09 · 01:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/cung-hoang-dao/tu-vi-ngay-09-07-2026/" target="_blank" rel="noopener">Tử vi ngày 09/07/2026: 5 con giáp tìm thấy vận may trong cách chăm chút lại đời sống thường ngày</a></h3>
+          <p>Ngày 9/7 mang sắc thái khá đặc biệt khi có các sao tốt liên quan đến tài lộc, giao dịch, di chuyển, nhưng cũng có những dấu hiệu nhắc mỗi người không nên xem nhẹ việc kiểm tra lại chi tiết. Với một…</p>
+          <time>Jul 09 · 00:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.elle.vn/bo-suu-tap/chanel-haute-couture-thu-dong-2026/" target="_blank" rel="noopener">Chanel Haute Couture Thu-Đông 2026: Cổ tích dưới tán cây đậu thần</a></h3>
+          <p>Sau chuyến ghé thăm thư viện riêng của Gabrielle Chanel, Matthieu Blazy tìm thấy nguồn cảm hứng trong những câu chuyện cổ của Charles Perrault. Từ đó, một bộ sưu tập haute couture mộng mơ đã ra đời.…</p>
+          <time>Jul 08 · 13:57</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/bi-quyet-khoe-va-dep/do-ph-cua-da/" target="_blank" rel="noopener">Độ pH của làn da: Tất tần tật những điều bạn nên biết</a></h3>
+          <p>Bạn có biết rằng độ pH da là một trong những tiêu chí để đánh giá mức độ khoẻ mạnh của da? The post Độ pH của làn da: Tất tần tật những điều bạn nên biết appeared first on ELLE .</p>
+          <time>Jul 08 · 13:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/bi-quyet-khoe-va-dep/xong-hoi-da-mat-bi-quyet-lam-dep-tai-nha/" target="_blank" rel="noopener">Làm đẹp tại nhà bằng phương pháp xông hơi da mặt</a></h3>
+          <p>Từ nay, bạn không cần mất nhiều thời gian và tiền bạc đến spa để thực hiện các liệu trình xông hơi da mặt. Vì bạn hoàn toàn có thể tự thực hiện phương pháp này tại nhà với 6 gợi ý sau từ ELLE. The…</p>
+          <time>Jul 08 · 12:15</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/bi-quyet-cua-sao/giai-ma-ve-ngoai-trong-veo-cua-lee-joo-myung-trong-chu-tich-tap-su/" target="_blank" rel="noopener">Giải mã vẻ ngoài trong veo của Lee Joo Myung trong “Chủ Tịch Tập Sự”</a></h3>
+          <p>Tone trang điểm rạng rỡ, đôi mắt long lanh có thần và đôi môi căng đầy đã giúp Lee Joo Myung ghi điểm trong lòng khán giả &quot;Chủ Tịch Tập Sự&quot;, chứng minh sức hút của cô không chỉ đến từ tài năng diễn…</p>
+          <time>Jul 08 · 11:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/beauty/phan-phu-kiem-dau-chong-nang/" target="_blank" rel="noopener">Dặm lại lớp khiên chắn UV tiện lợi hằng ngày cùng các loại phấn phủ chống nắng</a></h3>
+          <p>Không cần tẩy lớp trang điểm để thoa lại kem chống nắng, bạn vẫn có thể tăng cường bảo vệ da với các dòng phấn phủ chống nắng được ELLE giới thiệu dưới đây. The post Dặm lại lớp khiên chắn UV tiện…</p>
+          <time>Jul 08 · 10:47</time>
+        </div>
+      </article></div></div><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/bi-quyet-song/9-loi-ich-bat-ngo-tu-viec-doc-than-elle-2026/" target="_blank" rel="noopener">9 lợi ích bất ngờ từ việc độc thân</a></h3>
+          <p>Ở không ít xã hội, tình trạng độc thân - nhất là ở những người đang trong độ tuổi kết hôn hoặc đã bước vào tuổi trung niên - thường dễ bị xem là kết quả của sự kén chọn, thụ động hoặc thiếu may mắn…</p>
+          <time>Jul 08 · 10:20</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>EL</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Elle Vietnam</span></div>
+          <h3><a href="https://www.elle.vn/the-gioi-van-hoa/tan-chay-voi-13-cau-hat-tinh-yeu-day-lang-man-cua-taylor-swift/" target="_blank" rel="noopener">Tan chảy với 13 câu hát tình yêu đầy lãng mạn của Taylor Swift</a></h3>
+          <p>&quot;Đôi mắt đầy sao của chàng làm bừng sáng đêm tăm tối nhất đời tôi.&quot; The post Tan chảy với 13 câu hát tình yêu đầy lãng mạn của Taylor Swift appeared first on ELLE .</p>
+          <time>Jul 08 · 09:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews VN Streetwear</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNTEJZejJxRkxWOTh4SzNfLV8tMEJDWEp1d0FFaXF5SmZJVC1kUm1FaVlOM28xZmtuV1dsTDN6UWdMTTRlUHdidXB5MEpKd3V6OWRUM0tvbUREY1Q1RC1Hci1rZzh0R1dfSHJzSjlRV3hSSG9fSmhKZzVxSHQ5LW1SNW5kalB2WWRsRHF5V2dSY1V0ZHlFdDVUVjgtTDNBang5NFE?oc=5" target="_blank" rel="noopener">4 xu hướng thời trang nam từ Paris Fashion Week Xuân Hè 2027</a></h3>
+          <p>4 xu hướng thời trang nam từ Paris Fashion Week Xuân Hè 2027 L&#x27;Officiel VIETNAM</p>
+          <time>Jul 02 · 03:39</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews VN Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdGw0b0t1VDNPMTF3MXBQRUFtYWJaRXFlbHVjUHl4NlI2VVM5ZkI2MVpzWlNsWjl5VUtYZ1lTUGRZajQzWGRTU2xHY2hMbC1QdTNKelNyeWl0UnRqRmp5VnJkUHptNnpIdldNb1hxXy1aNGwtWnZjN2I5ZEdVdExCbnFQd09rMVdob3A1bjNpcWE1bVFxWjBLdXpuSmFWbF9Nd2NmMGVfMVFZaW1BSzdlMk9vTWVNMkQweUg5eTNTdDFldEU?oc=5" target="_blank" rel="noopener">Local brand Việt và BST Hè 2026: Màu sắc, cảm hứng văn hóa và tinh thần đương đại</a></h3>
+          <p>Local brand Việt và BST Hè 2026: Màu sắc, cảm hứng văn hóa và tinh thần đương đại ELLE Man</p>
+          <time>Jun 27 · 04:39</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews VN Fashion</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxNci1JNkxyX21UTUlaeEwxV29xaXdtRWFXdnJpRlJFZjB6eDJmQWwxNHNLMTlFVHdUOXYxUVo5VFpUUW1sUmd2R3RjZU9KZU1uVXN1cm5DcFJWZTFPbTh4Q2lZbGtxSzZqbXMwR09FOWdmSWN1aGpHOHh0dWQ2Z1BDa3BGcFo0Tm5lWFdIOENVWVJIZzFONmYxdkNGSG9QZzVaOE5kVFJMWXVQWTAzR01fT3lJd3AwYlVPVHd6VkNkeU83VXNMMnhiOF9jLTF2R1FU?oc=5" target="_blank" rel="noopener">Triển khai Fashion eCommerce cho local brand thời trang Việt Nam: Cần chuẩn bị gì trước khi scale?</a></h3>
+          <p>Triển khai Fashion eCommerce cho local brand thời trang Việt Nam: Cần chuẩn bị gì trước khi scale? Advertising Vietnam</p>
+          <time>Jun 26 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews VN Fashion</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNUlZHTUhIZFBvazY3T2dxVk5kOHlKc25CWGgwRjczR0k2dmh5SWhReFdMYTdPZkdrR1kyaUdyOVdXWXR0N3RBa09iMjJVTGdoRFNDN2VFWnJPYWFpcTg5T2o4Q2hyU3NUdmFGQzV5Z0U5R09sY0xsVGpFeHQwdG9QM0tyc2ZhN3VZMnc?oc=5" target="_blank" rel="noopener">Làn sóng đóng cửa và bài toán sinh tồn của thời trang Việt - Tập đoàn dệt may Việt Nam</a></h3>
+          <p>Làn sóng đóng cửa và bài toán sinh tồn của thời trang Việt Tập đoàn dệt may Việt Nam - Vinatex</p>
+          <time>Jun 22 · 02:08</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews VN Streetwear</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNEtkWmRWWGJIT0FUTVdzdFI5OXUyblZvMWczQ1g2S3daZURiZDlpNVhrM3N4VnU3WkpFTFRvMkRyc2RrLXQzWWl4VVJSOUFNM09DdHRDQlRZSXliTjVSc293MEVNSGVTdjBSZ0lnVmFzdUpEdU9hWmpmdVQtSngxZnFvc0cwSDE2d1J1clV2MXZPMkRjbV9DM0FlWnBDb3htb2Q3MzVpXy05X3czdkRQdVNXUXZXd3hx?oc=5" target="_blank" rel="noopener">UPRIZE &quot;náo loạn&quot; thảm đỏ Fashion Week, giúp một thương hiệu &quot;lên xu hướng&quot; - Báo điện tử Tiền Phong</a></h3>
+          <p>UPRIZE &quot;náo loạn&quot; thảm đỏ Fashion Week, giúp một thương hiệu &quot;lên xu hướng&quot; Báo điện tử Tiền Phong</p>
+          <time>Jun 19 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews VN Fashion</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNWHpDckx5Q1lJMnVWc0pnOVNIUEgtOXBURkxZZkc5RzBldWlJM0hwbTJ6cko1cVNsX1YzU09vSkhiajBMbkpZUHd2X3dZZTZoTXZIcHFpOHNubm1naFBoR0VYUU1TcGo2NkdYNnVrOTFwR0QyZUs3a0xPRExVbkRJcFVnSDltRFB2YlRPdE9Pa0JwN1g3RjE3OTBSbjR0SFhxM2RBSU5TRE1kbExtU2VST2dEREZFRkE1V1I1bnRkQQ?oc=5" target="_blank" rel="noopener">Việt Nam: Từ đầu mối sản xuất giá rẻ tới kinh đô thời trang tiếp theo</a></h3>
+          <p>Việt Nam: Từ đầu mối sản xuất giá rẻ tới kinh đô thời trang tiếp theo Style Republik</p>
+          <time>Jun 15 · 05:25</time>
+        </div>
+      </article></div></div></div>
+      </section><section class="panel" id="tab-singapore">
+        <header class="sec-hd"><h2>🇸🇬 Singapore</h2><span class="rule"></span></header>
+        <p class="sec-brief">Latest: Tiffany &amp; Co.’s Modern Jewellery Icons Are Made To Move With You… (Harper&#x27;s Bazaar SG)</p>
+        <div class="slide-nav"><button class="sl-btn prev">‹</button><span class="sl-hint">Swipe or tap arrows for more</span><button class="sl-btn next">›</button></div><div class="slide-track"><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/jewels-watches/jewellery/tiffany-co-fine-jewellery" target="_blank" rel="noopener">Tiffany &amp; Co.’s Modern Jewellery Icons Are Made To Move With You</a></h3>
+          <p>From graphic links to woven diamonds and sculptural wings, Tiffany &amp; Co. brings a fresh sense of ease to fine jewellery.</p>
+          <time>Jul 08 · 02:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/en/celebrity/from-jimin-to-ji-chang-wook-see-which-korean-stars-are-designer-brand-ambassadors" target="_blank" rel="noopener">The A</a></h3>
+          <p>The ultimate guide to all the Korean celebrities who are luxury brand ambassadors.</p>
+          <time>Jul 07 · 08:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/fashion/runway/dior-haute-couture-fall-winter-2026-show" target="_blank" rel="noopener">A New Shape Of Romance Takes Place At Dior’s Haute Couture Show</a></h3>
+          <p>Fresh from the Taylor Swift wedding coup, Dior returned to couture with more art-school provocation, texture and tension.</p>
+          <time>Jul 07 · 06:35</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/celebrity/lena-schuett-things-to-know" target="_blank" rel="noopener">8 Things To Know About Lena Lorena Schuett</a></h3>
+          <p>An it girl on the rise.</p>
+          <time>Jul 07 · 02:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/beauty/news-trends/hottest-beauty-launches-everyone-talking-about" target="_blank" rel="noopener">The Hottest Beauty Launches That Everyone Is Talking About</a></h3>
+          <p>New releases to elevate your routine.</p>
+          <time>Jul 03 · 10:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/celebrity/must-know-celebrity-campaigns" target="_blank" rel="noopener">All The Must-Know Celebrity Campaigns Of 2026</a></h3>
+          <p>These A-listers are shaping trends, one campaign at a time.</p>
+          <time>Jul 03 · 09:15</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/fashion/where-fashion-lives-ashley-parveen-video" target="_blank" rel="noopener">Ashley Chiam And Parveen Hassanbhai Discuss Individuality And Community In Fashion</a></h3>
+          <p>It’s all about the comme-unity spirit.</p>
+          <time>Jul 03 · 08:50</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/beauty/makeup/best-heated-eyelash-curlers" target="_blank" rel="noopener">7 Best Heated Eyelash Curlers That Actually Hold A Curl All Day</a></h3>
+          <p>Your mascara is doing its best. Add a heated eyelash curler to change the game.</p>
+          <time>Jul 03 · 07:40</time>
+        </div>
+      </article></div></div><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/jewels-watches/watches/raye-audemars-piguet-interview" target="_blank" rel="noopener">BAZAAR Exclusive: Raye Reflects On The Making Of Her Latest Album And Her Relationship With Time</a></h3>
+          <p>From the deeper meaning behind her newest album to her next watch grail, Raye doesn’t hold back in this exclusive interview.</p>
+          <time>Jul 03 · 04:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HA</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Harper&#x27;s Bazaar SG</span></div>
+          <h3><a href="https://www.harpersbazaar.com.sg/en/lifestyle/things-do-weekend" target="_blank" rel="noopener">Things To Do In Singapore This Weekend: 3 To 5 July</a></h3>
+          <p>Looking for things to do this weekend in Singapore? Indulge in the spread of events and experiences we’ve curated for you.</p>
+          <time>Jul 03 · 02:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews SG Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQeGdodUVxWHJ0U2Z5Y2dGWUJKV2NPSVFmYlN0LUFMN1RkdWloWXJQVjZSYV9idEtGeEF6NlhDdFlRSnZLZWJvX08wQlBIZ1lSbzBsSGpjdURKWWMyRXJwT3BER05oNzhLV3ZCZUVuNHBxY0tnenpEa3ZHZnVEaHFBdThwWnVMNmc?oc=5" target="_blank" rel="noopener">Game, Set, Slay: Fashion’s Most Iconic Sports Moments</a></h3>
+          <p>Game, Set, Slay: Fashion’s Most Iconic Sports Moments Harper&#x27;s Bazaar Singapore</p>
+          <time>Jun 29 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews SG Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxNM3h0aDNrOUIyZ2NOX0ljcjFFTy13dWNERHBOVU5KNVlaeWhzbktOU3ZVbEVQY2dONVlpZ2lYOWhLVVBqSjdLeGdxV1lkVkM4SElKaUtQTHZxdDYtYUtuVUpZNUNJRDZlOFdwX3dOVng4Z3hfcFBmdVZrN1I0OGx3cmhRd05FYkd4dUFEcDU5OVFlcXhRS2NBUUlRUk9hRUI5eEVWNENfSmh5Y1A4bmxpWWRMQzNTYjMwZTJGQ1hnVXRCblltSENEUC1SbGtTUQ?oc=5" target="_blank" rel="noopener">What’s behind the rise of outdoor-inspired fashion? Meet the Singapore brands leading the trend</a></h3>
+          <p>What’s behind the rise of outdoor-inspired fashion? Meet the Singapore brands leading the trend The Straits Times</p>
+          <time>Jun 11 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews SG Fashion</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNR2I3cVhVbWpTWlByZTJQbVcwekZQNXRkdHBhZ1NoS3lQbWpvNjFraGVFUUJ4TDRRb29TamxhZzl4S0NQVVg3ZEotUFQ3dUUwY285aGNDRmxsWks1dnNJdHdtS1VFcHJveGJfcEJoczVQTFVYNTgzRE9OUHk5ekd5WWVXTFozbTJsX2FsSFE0cFJYS3YtUVFn?oc=5" target="_blank" rel="noopener">18 Street Style Trends To Try For Spring/Summer 2026</a></h3>
+          <p>18 Street Style Trends To Try For Spring/Summer 2026 Harper&#x27;s Bazaar Singapore</p>
+          <time>Jun 03 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews SG Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPMk5RYm41THAtazhMNHZzZlZtZndlUmRLdzdBMEI1RVBvc3BHMGJJREw0Y3Bmd21YOHlCYTZsZE8zVEhiYkpFcHpqUnVfaVJSdmIxZGlGcVV2bnp4c0UxTGxrWFlkMmIyVlRaU3Q3ZTRURERXbkZUMS0zVExnVlhSbDdUMWxvQUpVaDlGVjlaZjBsSGZjeGZKSGlnMGF1TmYyLU1MaTNuRGFCbi1wQzZEdlBuYXA4RkN3SEpwU2JFYjBqcGVl0gHKAUFVX3lxTE5GMjhSbnNzRi1oZTRvcVAzMHlldm1uRnVLWC11R0NObk5kNVl1RzhhNGFvaTJWMG85eXlTa3p0cFk1UVR2SGVJN2xLdmk1UTZkb2FWdEdIanZlN0ZzWGpHcWc3Q1JpejNwcU9ZaDFHWWlPWThGenNnNkhKVjVaSXZ6NTNmWGlQUnNTbXNlWmYxX2JjRnk3Qlh5LVdBTmxxeWJmdUhTWE1XY2pwVlZPUWN2NXk0MVVHVzFJcEpJTGZhdlNPazUxUjM0SWc?oc=5" target="_blank" rel="noopener">Upstairs Garments x Supper House are opening Singapore’s biggest vintage fashion market this June</a></h3>
+          <p>Upstairs Garments x Supper House are opening Singapore’s biggest vintage fashion market this June Lifestyle Asia Hong Kong</p>
+          <time>May 21 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews SG Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNZXVpUUhVOFREMnVrWmQyY0J5Tkh3RzB1dDFzU3M3V1p0UDFCQWphOEVmd1UwQXdWY1BDODI5eXdZa096Q3NvWVVSR25xdXBpMmZsdkdzSHZ1ZXA5MGtpc3ZfREFYdmhUUGJzRFFKRFVrcjE4RW1xWC1GdFNaYy1CZWo2V1V1bWZPRlpIMTNMR2F6OTBaaEt4Z0VzQ28zWXVBbDZheW5hdnozVHpFbklib0h3M0l4aUZVYUpQLTZYbDg3ZVpC0gHKAUFVX3lxTE1JbHc1UGV5UTJlRlFpcF9YVy1VUF8yOEFXc0xHWWhTYWVmRk9HZ0RjcHU5SmtwM2o0bDRKR1pQYVlwaHpkRGs0d0xLZjd4UC1pallVMFFMSFgzNi1oMHhMcl9fbXNsQUt6NFpyT2JIOFZGbEFiM1k2V29MTlh3UmpwX2laLWhsSVlzcHhzc1V3MERXYWFiMWdFWHhHTng0SjlrX3piYXdLTTRRN1BEWXBHNzJGTnRmajFrdkhfUUo3Y1FwY19CblJ4cXc?oc=5" target="_blank" rel="noopener">Calvin Klein x Jungkook: All the details of the CKJK pop-up in Singapore this May</a></h3>
+          <p>Calvin Klein x Jungkook: All the details of the CKJK pop-up in Singapore this May Lifestyle Asia Hong Kong</p>
+          <time>May 19 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews SG Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNQVZwTHJyRmpqWDNLcG9oWHlDMkxSbkI4Z2s1aEI5QVJxTUlhYlh2aWxSaUVjMnppNlA4UXNob09Fa2pVV1R0MWpWNlZJckZlZzJqTGowNUVUWVN2cDZZRWZCa3dBZXRCVjBqR2txend1MVZvcXg2cWNtbkhTai0xcmJFQWFoWDA1VEIyNjhXZldKRl9ISHRCNWZZWTVaRUVSRmVPX0dpbWNuLWhaYW5UT3NpZ9IBuAFBVV95cUxNX1RFR0FoXzAwR0syN25fVHdJWEcxcVBBc1lzRTRJcHlTVlFxRHpqcnI1ZS0xaWNidUVGNDBMal9PamNWdlB4YzFDMG9KUUlncHRndlhXRzFrQWhjeXZFa280bmlZTndvZkF0S29kRVZRbnpMNnhaVXdNU3g3UkpFRHFrRWdSYWJEQ1B1N2NzZ0d4ZVdZc283SmNiZkVObjZqSzlMZFhuUVB2cXlRRGVtY3JDX1dPaXhZ?oc=5" target="_blank" rel="noopener">The East-West bag is Spring/Summer 2026’s hottest accessory—here are the best bags to shop now</a></h3>
+          <p>The East-West bag is Spring/Summer 2026’s hottest accessory—here are the best bags to shop now Lifestyle Asia Hong Kong</p>
+          <time>Apr 27 · 07:00</time>
+        </div>
+      </article></div></div></div>
+      </section><section class="panel" id="tab-australia">
+        <header class="sec-hd"><h2>🇦🇺 Australia</h2><span class="rule"></span></header>
+        <p class="sec-brief">Latest: Australians Refresh Their Winter Wardrobes with SHEIN as Seasonal… (GNews AU Fashion)</p>
+        <div class="slide-nav"><button class="sl-btn prev">‹</button><span class="sl-hint">Swipe or tap arrows for more</span><button class="sl-btn next">›</button></div><div class="slide-track"><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews AU Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxNVEk1cGdBZzNlMkV1UlMzc0lGU0JTamNBb0ZOMUF1bzl5NlZVR2t1Yl85bDlURlg5T2F3Qms1ZnBjN3prdGRBU3B5OVlVS1FRNVJvMUFxVmZmU1locVp2SFUyXy1pUzBXc09uZTlIOExBQ1NyVkNENE5rRWFxZ3hleGlUQVN3LUJ6MTVrVDhabWt2QTdOTnY4ZVFKYWxHVk5ZWDBJMHpRMDdWZE5lQ3dFUDUtS3ZLWWJEOThxdVYwNmU3STc4OUVtM295OGFvVVc3MXFscDM4WHlfSUVqWXBWay1Sb2NlS2s4d21BdVZvbENqUmRScVppWNIB_gFBVV95cUxOQWRqdnVybmRWTWtta0xQMEloTy1URjZRTnJpaHpNWlJYQS1TSE9jNmU0TmNqclVlZXJCMXA0LWRnMnhQeWNUbXJyWmotUDVaUU52S0tNcC0zeHJta0hXUnI5Z09PdXBtcDFyQTRGVm5HVElDb3IzbTZFajBlNnFzMkRxOFh4T3ozWE1MdE1uaGd2dWhPYmt2cjN5dURkaWJsU3VtWVE0M3kwZVlQeHJWdGhuUXExTEdzZlFESTJQc0VGby1IbXVMSlJOU2FwcWhNZnJvYVVWV1dZY2M2d1hqN3d4NmNUZ012eV9Hb1NJclJ0alczdmkwWjl1RGVpdw?oc=5" target="_blank" rel="noopener">Australians Refresh Their Winter Wardrobes with SHEIN as Seasonal Fashion Trends Take Shape</a></h3>
+          <p>Australians Refresh Their Winter Wardrobes with SHEIN as Seasonal Fashion Trends Take Shape The Manila Times</p>
+          <time>Jul 09 · 01:17</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/emmy-nominations-2026-snubs-surprises/" target="_blank" rel="noopener">The biggest snubs and surprises from the 2026 Emmy nominations</a></h3>
+          <p>The biggest talking points. The post The biggest snubs and surprises from the 2026 Emmy nominations appeared first on RUSSH .</p>
+          <time>Jul 08 · 21:06</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/australian-activewear-brands/" target="_blank" rel="noopener">16 of the best Australian activewear brands primed for your next gym session</a></h3>
+          <p>Whether you&#x27;re a reformer lover or runner in training. The post 16 of the best Australian activewear brands primed for your next gym session appeared first on RUSSH .</p>
+          <time>Jul 08 · 07:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.russh.com/lions-gate-portal/" target="_blank" rel="noopener">What you need to know about the Lion’s Gate Portal in 2026</a></h3>
+          <p>A time to manifest. The post What you need to know about the Lion’s Gate Portal in 2026 appeared first on RUSSH .</p>
+          <time>Jul 08 · 06:45</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/the-shards-series-plot-cast-release-date/" target="_blank" rel="noopener">Ryan Murphy and Kaia Gerber’s Bret Easton Ellis series is nearly here</a></h3>
+          <p>She&#x27;s stepping back into Ryan Murphy’s world post-&#x27;American Horror Story&#x27;. The post Ryan Murphy and Kaia Gerber’s Bret Easton Ellis series is nearly here appeared first on RUSSH .</p>
+          <time>Jul 08 · 06:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/where-to-buy-jacques-marie-mage-australia/" target="_blank" rel="noopener">Where to pick up a pair of Jacques Marie Mage sunglasses</a></h3>
+          <p>With production intentionally limited and stockists carefully selected, these are the best places to shop the brand in Australia. The post Where to pick up a pair of Jacques Marie Mage sunglasses…</p>
+          <time>Jul 08 · 05:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews AU Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxPQ080TWdFazBMNzFOQ2FlRkV3YnZnYnBmSmhjZU9LS3VRQVVaWXNUTXREc3pBTUhVVjM2YlBnVkRpbWhlVlpITFhFaWhXT2lIREZjWVJYMUtOOVZpM3Q5em9MTVZkMXpKb0FueVlMa2tRcUM2NXBSa09Bb0p1eTlhanJGd25IS3BfTkxBSURwRmktNU9sSHdQb2Fn?oc=5" target="_blank" rel="noopener">EVENT: NIVEA Black &amp; White style confidence breakfast - beautydirectory |</a></h3>
+          <p>EVENT: NIVEA Black &amp; White style confidence breakfast beautydirectory |</p>
+          <time>Jul 08 · 04:40</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/best-fashion-resale-platform-australia/" target="_blank" rel="noopener">Your ultimate guide to Australia’s best fashion resale platforms</a></h3>
+          <p>Second-hand fashion is booming in Australia, here&#x27;s where to find it. The post Your ultimate guide to Australia’s best fashion resale platforms appeared first on RUSSH .</p>
+          <time>Jul 08 · 04:15</time>
+        </div>
+      </article></div></div><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/where-to-watch-obsession-film/" target="_blank" rel="noopener">You can now rent the internet’s favourite horror film, ‘Obsession’</a></h3>
+          <p>Our latest obsession *is* &#x27;Obsession&#x27;. The post You can now rent the internet’s favourite horror film, ‘Obsession’ appeared first on RUSSH .</p>
+          <time>Jul 08 · 03:45</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/australian-music-festivals-happening-in-2026/" target="_blank" rel="noopener">Every music festival happening across Australia in 2026</a></h3>
+          <p>From Beyond the Valley to Mundi Mundi Bash. The post Every music festival happening across Australia in 2026 appeared first on RUSSH .</p>
+          <time>Jul 08 · 03:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span></div>
+          <h3><a href="https://www.russh.com/films-like-the-odyssey/" target="_blank" rel="noopener">8 epic films to stream before ‘The Odyssey’ arrives</a></h3>
+          <p>Fill the Christopher Nolan-shaped void in your watch list. The post 8 epic films to stream before ‘The Odyssey’ arrives appeared first on RUSSH .</p>
+          <time>Jul 08 · 02:45</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>RU</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">RUSSH</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.russh.com/charli-xcx-eighth-studio-album/" target="_blank" rel="noopener">The tracklist for Charli XCX’s’Music, Fashion, Film’ deserves a national holiday</a></h3>
+          <p>Leave it to Charli to surprise us. The post The tracklist for Charli XCX’s’Music, Fashion, Film’ deserves a national holiday appeared first on RUSSH .</p>
+          <time>Jul 08 · 02:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews AU Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNRm1pcW1TcTI2ZTVGZzQxeGF2NTFuWE5Ua05vNXpfa013QnlxUnJ1MUl4Qm05cldhS21Gd3hhV0VmbktVSVhHem9VM2xxVWREYmx4cTVZck4tOXgxcWl5MlJvc2s0ZWdBSTlvdzhWQW8wQ295djZYbFRfakZwV3Y5ZEljVVY5R0RXaktGeGN5QWZmY05MamVqSGYwR04zTElmZzJTZ0R5V0Rac1RQRlEta0EyMVl2YTVhcjRpYUhycE1SRnhiTEE?oc=5" target="_blank" rel="noopener">Naomi Osaka kicks off Wimbledon 2026 in style</a></h3>
+          <p>Naomi Osaka kicks off Wimbledon 2026 in style Nine.com.au</p>
+          <time>Jun 30 · 23:25</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews AU Fashion</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE83R2FvS0FVSDFEc3FXN2U0Znd0aXdzdm1sOENwLW82a0FDVENpdWU1SVpva25hbHZ2bEFzdE5xV3QzOWgzNTRpRks3OHJ5UXRVcWJHQVBhYWNpZTFQMFBzUFY0dkV3eFVwbkNlOUlOVk5McmZsM2JR?oc=5" target="_blank" rel="noopener">The Biggest Trends From Australian Fashion Week 2026 - Refinery29</a></h3>
+          <p>The Biggest Trends From Australian Fashion Week 2026 Refinery29</p>
+          <time>Jun 23 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews AU Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQS2xFcEtkSFJDZTFrY19tcnF6TkxKZjF5ZHlXTzM2bFd3TldKNFNSR0tJd2oteWNVM3poeFY5Y2RzZDd5cTlFcVJ1dzFFQWdIcnlCaEdlbDRsZjdVdWNhZG9rOWY3cmw5Y0M3cXR6dGNWOHR2MVR2ZzJwX1BhVFpRMjFicHIyZXN0eU1NMngtWQ?oc=5" target="_blank" rel="noopener">Seven Winter Fashion Trends To Know, According to Top Australian Stylists</a></h3>
+          <p>Seven Winter Fashion Trends To Know, According to Top Australian Stylists Broadsheet</p>
+          <time>Jun 23 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews AU Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOXRablJNcEJVeWtqVmdjazk3WkxBNTVKdldaVEp0T2pkbkoxQnVpbGlHZ2h0UjR1YkJIZFJXT1dmeFdrRE9XZUo3ZGo2eFZEcUhPeVhWZUNjTXpxeDBGNmJBUl9jY05RajRhNkVOSU5mNGlraUduUXl4a3lrdG5EdjlEbVdrbkx0NmN0aHNPMG5tQ1pqMTk3eXFDeGlMNGdjanZjaXp6WGF1SnpRbDR1UzU4cUxTQkZmZ0UxVmtYZUR1dDA?oc=5" target="_blank" rel="noopener">Shoulders, suede and feminine men dominate style this winter</a></h3>
+          <p>Shoulders, suede and feminine men dominate style this winter The West Australian</p>
+          <time>Jun 20 · 07:00</time>
+        </div>
+      </article></div></div></div>
+      </section><section class="panel" id="tab-usa">
+        <header class="sec-hd"><h2>🇺🇸 USA</h2><span class="rule"></span></header>
+        <p class="sec-brief">Latest: Jean Paul Gaultier Fall 2026 Couture… (Vogue US)</p>
+        <div class="slide-nav"><button class="sl-btn prev">‹</button><span class="sl-hint">Swipe or tap arrows for more</span><button class="sl-btn next">›</button></div><div class="slide-track"><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4eb715a3690677487ae123/master/pass/00001-jean-paul-gaultier-fall-2026-couture-credit-brand.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/jean-paul-gaultier" target="_blank" rel="noopener">Jean Paul Gaultier Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4ebb913d2ee69032a050e4/master/pass/00001-manish-malhotra-fall-2026-couture-credit-gorunway.JPG')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/manish-malhotra" target="_blank" rel="noopener">Manish Malhotra Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4e8d865f3a86db799adc50/master/pass/00001-viktor-and-rolf-fall-2026-couture-credit-brand.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/viktor-rolf" target="_blank" rel="noopener">Viktor &amp; Rolf Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4ec3881a8886e8d5b9bdfe/master/pass/00001-zuhair-murad-fall-2026-couture-credit-gorunway.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/zuhair-murad" target="_blank" rel="noopener">Zuhair Murad Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4e704115869310d9a12d55/master/pass/00001-robert-wun-fall-2026-couture-credit-brand.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/fashion-shows/fall-2026-couture/robert-wun" target="_blank" rel="noopener">Robert Wun Fall 2026 Couture</a></h3>
+          
+          <time>Jul 09 · 04:42</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4e77700bff34ecbbe1cfa9/master/pass/LEAD%20(2)%20(1).jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/article/the-vogue-business-tiktok-trend-tracker" target="_blank" rel="noopener">The Vogue Business TikTok Trend Tracker</a></h3>
+          <p>Vogue Business brings you weekly exclusive data from TikTok, unpacking the latest creators and biggest trends sweeping its Gen Z user base.</p>
+          <time>Jul 09 · 04:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4e273d05b217e1f03171af/master/pass/k-pop-vogue-business-story.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/article/k-pop-stars-are-fueling-the-rise-of-vietnamese-fashion" target="_blank" rel="noopener">K</a></h3>
+          <p>More than just a manufacturing hub, Vietnam is undergoing a dynamic transformation, as its economy surges and a new guard of young fashion designers — bolstered by the support of girl groups like…</p>
+          <time>Jul 09 · 04:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4e747b486cadd0a04b3823/master/pass/cooling-vogue-business-story.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/article/mid-heatwave-how-cool-can-koreas-cooling-beauty-market-get" target="_blank" rel="noopener">Mid-Heatwave, How Cool Can Korea’s Cooling Beauty Market Get?</a></h3>
+          <p>Heat is no longer just a seasonal inconvenience. As rising temperatures reshape daily life, a new generation of cooling skincare products from Korea promises to improve comfort and provide relief…</p>
+          <time>Jul 09 · 04:30</time>
+        </div>
+      </article></div></div><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4e447f95c7005c2f504b3a/master/pass/fashion-cv-vogue-business-story.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/article/how-to-write-a-fashion-resume" target="_blank" rel="noopener">How to Write a Fashion Résumé</a></h3>
+          <p>The résumé is the basis of all job applications, but it’s often the most daunting. We spoke to career counselors, hiring managers, and recent applicants about the biggest challenges and…</p>
+          <time>Jul 09 · 04:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HI</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Highsnobiety</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.highsnobiety.com/p/new-balance-880r-black/" target="_blank" rel="noopener">New Balance&#x27;s Youngest Dad Shoe Is in Touch With Its Dark Side</a></h3>
+          <p>New Balance just dipped its brand spanking new 880R dad shoe in jet black ink &amp; its never looked better.</p>
+          <time>Jul 09 · 04:09</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2026%2F07%2F08%2F2026-78th-primetime-emmy-awards-nominees-full-list-1.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast</span></div>
+          <h3><a href="https://hypebeast.com/2026/7/2026-78th-primetime-emmy-awards-nominees-full-list" target="_blank" rel="noopener">2026 Primetime Emmy Awards 2026: Full List of Nominees</a></h3>
+          <p>The Television Academy has unveiled its nominees for the 78th Primetime Emmy Awards, setting the stage for what promises to be one of the most competitive races in recent memory. HBO Max&#x27;s The Pitt…</p>
+          <time>Jul 09 · 03:59</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4ee15492e67f3f81eda5d1/master/pass/2150277491')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/article/robinne-lee-crash-into-me-interview" target="_blank" rel="noopener">‘The Idea of You’ Author Robinne Lee on Her New Novel, ‘Crash Into Me’</a></h3>
+          <p>In a recent Zoom interview from Paris, Lee told Vogue about how the wild success of “The Idea of You” contributed to years of writer’s block, the “tricky” process of writing sex scenes, and how she’d…</p>
+          <time>Jul 08 · 23:52</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4ee1107f29a64f1274c945/master/pass/PARISCOUTUREFW26_STREETSTYLE_DAY3_PHILOH_03.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://www.vogue.com/slideshow/phil-ohs-best-street-style-photos-from-the-fall-2026-couture-shows-in-paris" target="_blank" rel="noopener">The Best Street Style Photos From the Fall 2026 Couture Shows</a></h3>
+          <p>Photographer Phil Oh captures the drama and frivolity in Paris as designers present their fall 2026 couture collections.</p>
+          <time>Jul 08 · 23:50</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews US Fashion</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE81bG1LQy1aTjFVMk5SSHNURl9HTzdVLVo3WlFFTFg0M1MzMmNLMXpEb3hMNjQ3ei1mTmxJUDZvX25VX256T1ZtdTBpRkNNRGlmclYxV2tpV3lnRUk?oc=5" target="_blank" rel="noopener">Trying On ASOS Summer Clothing! *Cute Vacay Outfits* Ponta Delgada (MUQb2GXu0Y)</a></h3>
+          <p>Trying On ASOS Summer Clothing! *Cute Vacay Outfits* Ponta Delgada (MUQb2GXu0Y) Mshale</p>
+          <time>Jul 08 · 22:54</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>HI</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Highsnobiety</span></div>
+          <h3><a href="https://www.highsnobiety.com/p/namu-shop-interview/" target="_blank" rel="noopener">One of the World&#x27;s Best Menswear Stores Is In... Texas?</a></h3>
+          <p>Namu is one of America’s most interesting retailers, offering a tightly curated mix of Japanese and European labels.</p>
+          <time>Jul 08 · 21:56</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://assets.vogue.com/photos/6a4ba113289383d8f71c2737/master/pass/00010-schiaparelli-fall-2026-couture-credit-brand.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Vogue US</span></div>
+          <h3><a href="https://www.vogue.com/article/can-rubber-be-couture" target="_blank" rel="noopener">Can Rubber Be Couture? The Fall 2026 Shows Think So.</a></h3>
+          <p>From Schiaparelli to Jean Paul Gaultier and Robert Wun, rubber is cropping up across this season&#x27;s couture collections as one of fashion&#x27;s next it materials.</p>
+          <time>Jul 08 · 21:11</time>
+        </div>
+      </article></div></div></div>
+      </section><section class="panel" id="tab-korea">
+        <header class="sec-hd"><h2>🇰🇷 Korea</h2><span class="rule"></span></header>
+        <p class="sec-brief">Latest: 2026 프라임타임 에미상 후보 총정리: 2026년 노미네이션 풀 리스트… (Hypebeast KR)</p>
+        <div class="slide-nav"><button class="sl-btn prev">‹</button><span class="sl-hint">Swipe or tap arrows for more</span><button class="sl-btn next">›</button></div><div class="slide-track"><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2F2026-78th-primetime-emmy-awards-nominees-full-list-1.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/2026-78th-primetime-emmy-awards-nominees-full-list" target="_blank" rel="noopener">2026 프라임타임 에미상 후보 총정리: 2026년 노미네이션 풀 리스트</a></h3>
+          <p>Television Academy가 제78회 Primetime Emmy Awards 후보를 발표하며, 최근 몇 년 사이 가장 치열한 경쟁이 될 것으로 전망되는 레이스의 막을 올렸다. HBO Max의 The Pitt는 작품상인 Outstanding Drama Series와 Noah Wyle의 Outstanding Lead Actor in a Drama…</p>
+          <time>Jul 09 · 03:59</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fseiko-presage-cocktail-time-three-new-crushed-ice-creations-release-info-1.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/seiko-presage-cocktail-time-three-new-crushed-ice-creations-hcb001-mint-mist-hcb002-emerald-mist-hcb003-whisky-mist-release-info" target="_blank" rel="noopener">세이코 프레사지 칵테일 타임, ‘크러시드 아이스’ 텍스처로 업그레이드</a></h3>
+          <p>요약 세이코가 Presage Cocktail Time 컬렉션에 ‘Crushed Ice’ 콘셉트의 신모델 3종, ‘Mint Mist’, ‘Emerald Mist’, ‘Whisky Mist’를 선보입니다.바 조명 아래 반짝이는 크러시드 아이스를 연상시키는 텍스처드 그라디언트 다이얼이 특징입니다.가격은 약 560달러(USD)이며, 현재 사전 주문이 진행 중이고…</p>
+          <time>Jul 09 · 02:15</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Flego-pokemon-rayquaza-kit-release-info-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/lego-pokemon-rayquaza-kit-release-info" target="_blank" rel="noopener">LEGO, 웅장한 포켓몬 레쿠쟈 브릭 키트 출시 준비 중</a></h3>
+          <p>요약 LEGO 그룹이 브릭으로 구현한 레쿠쟈 모델의 전용 온라인 상품 페이지를 공식 오픈했다.이번 전설 포켓몬 드래곤 피규어는 브랜드가 전개 중인 게임 콜라보 유니버스의 차기 라인업으로, 프리미엄 디스플레이를 염두에 두고 설계되었다.최종 브릭 수, 글로벌 판매가, 공식 출시일 등 구체적인 정보는 아직 잠정 단계로, 추후 업데이트될 예정이다. LEGO가…</p>
+          <time>Jul 08 · 21:35</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fnew-era-swarovski-ss26-new-york-yankees-caps-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/new-era-swarovski-ss26-new-york-yankees-caps" target="_blank" rel="noopener">New Era x Swarovski, 뉴욕 양키스 크리스털 캡 출시</a></h3>
+          <p>요약 New Era가 럭셔리 크리스털 하우스 Swarovski와 손잡고 뉴욕 양키스 캡 시즌 캡슐 컬렉션을 선보인다.이번 협업 컬렉션은 라이프스타일 브랜드의 2026 Spring/Summer 핵심 라인업으로, 대표 캡 실루엣에 프리미엄 크리스털 장식을 더한 것이 특징이다.현재까지는 블랙과 네이비 컬러웨이의 뉴욕 양키스 캡이 공개됐다. New Era와…</p>
+          <time>Jul 08 · 20:54</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fdt-0.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/denim-tears-lookbook-10k-niontay-sideshow-anysia-kym-summer-2026" target="_blank" rel="noopener">10k 래퍼들이 비치로 출격, Denim Tears 새 컬렉션 전격 공개</a></h3>
+          <p>MIKE의 레이블 10k와 Tremaine Emory의 브랜드 Denim Tears는 꽤 오래전부터 두터운 인연을 자랑해왔다. 브루클린을 기반으로 한 래퍼 MIKE의 독립 레이블 10k는 오랜 시간 이 스트리트웨어 임프린트를 꾸준히 지원해왔고, Denim Tears 또한 레이블을 향한 지지를 아끼지 않았다.이 두 뉴욕 기반 유닛의 관계는 그야말로…</p>
+          <time>Jul 08 · 20:45</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fnew-balance-aime-leon-dore-performance-running-capsule-release-info-ss26-0.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/new-balance-aime-leon-dore-performance-running-capsule-release-info" target="_blank" rel="noopener">Aimé Leon Dore와 New Balance, SS26 러닝 캡슐로 여름 트레이닝 시즌 정조준</a></h3>
+          <p>요약Aimé Leon Dore와 New Balance가 다시 한 번 한정판 퍼포먼스 러닝 캡슐 컬렉션을 선보인다. 이번 드롭은 일상적인 트레이닝용 FuelCell Rebel v5와 레이스에 최적화된 SC Elite v5 실루엣을 협업 에디션으로 담아냈다. 이 종합적인 컬렉션은 향후 스니커즈의 본격적인 롤아웃에 앞서, 7월 9일 Aimé Leon Dore…</p>
+          <time>Jul 08 · 20:38</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fnigel-sylvester-reveals-air-jordan-14-purple-ferrari-wnba-pe-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/nigel-sylvester-reveals-air-jordan-14-purple-ferrari-wnba-pe" target="_blank" rel="noopener">나이젤 실베스터, 에어 조던 14 &quot;퍼플 페라리&quot; WNBA PE 첫 공개</a></h3>
+          <p>요약 Jordan Brand가 WNBA 선수들을 위해 페라리에서 영감을 받은 상징적인 실루엣을 활용해 특별한 플레이어 전용 스니커즈를 제작했다.시그니처 레드 컬러웨이 대신 깊고 풍부한 퍼플 프리미엄 스웨이드 어퍼와 페이크 카본 파이버 디테일을 적용해 독특한 존재감을 완성했다.철저히 플레이어 전용 커스텀으로 설계된 모델이라, 이 특정 컬러웨이는 일반…</p>
+          <time>Jul 08 · 20:25</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fnike-air-max-dolce-light-magenta-IB4527-500-release-info-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/nike-air-max-dolce-light-magenta-ib4527-500-release-info" target="_blank" rel="noopener">강렬한 ‘라이트 마젠타’ 컬러로 돌아온 나이키 에어 맥스 돌체</a></h3>
+          <p>Name: Nike Air Max Dolce &quot;Light Magenta&quot;Colorway: Light Magenta/BlackSKU: IB4527-500MSRP: $130 USDRelease Date: July 18, 2026Where to Buy: NikeNike는 곧 출시될 Air Max Dolce를 통해 자사의 전설적인 러닝 아카이브를 한층 더 확장할…</p>
+          <time>Jul 08 · 19:55</time>
+        </div>
+      </article></div></div><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fsongzio-ss27-impavide-paris-fashion-week-runway-collection-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/songzio-ss27-impavide-paris-fashion-week-runway-collection" target="_blank" rel="noopener">송지오, 아방가르드 SS27 ‘IMPAVIDE’ 컬렉션 첫 공개</a></h3>
+          <p>요약 송지오가 ‘IMPAVIDE’라는 타이틀로 2027 봄/여름 컬렉션을 공개하며 흔들림 없는 평정심과 회복 탄력성을 주제로 한 서사를 펼친다.이번 시즌 라인은 역사적 한국 아키타입을 현대적으로 재구성해, 한복의 깃(git)과 같은 전통적 디테일을 과감한 실루엣과 결합한 아방가르드 룩으로 선보인다.하보타이 실크와 오간자 같은 섬세한 패브릭에 메탈릭…</p>
+          <time>Jul 08 · 19:43</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fchloe-wise-extrasensory-0.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/chloe-wise-extrasensory-exhibition-kulturstiftung-basel-h-geiger" target="_blank" rel="noopener">클로이 와이즈, 전시 ‘Extrasensory’에서 미지의 세계로 떠나다</a></h3>
+          <p>요약아티스트 Chloe Wise가 선보이는 전시 Extrasensory는 바젤 KBH.G 뮤지엄에서 9월 6일까지 이어진다이번 전시는 인류가 수 세기 동안 매혹되어 온 미지의 외계 세계를 탐구하는 그녀의 신작 영화 PsyFi*를 중심으로 구성된 세 개의 몰입형 공간으로 펼쳐진다.이제 Area 51과 바젤 사이에 하나의 포털이 열린 셈이다. 그 공은…</p>
+          <time>Jul 08 · 19:27</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fbalenciaga-couture-2027-pierpaolo-piccioli-debut-collection-0.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/balenciaga-couture-2027-pierpaolo-piccioli-debut-collection" target="_blank" rel="noopener">더 커진 발렌시아가: 피에르파올로 피촐리의 2026 가을 오트 쿠튀르 데뷔</a></h3>
+          <p>요약Pierpaolo Piccioli의 Balenciaga 데뷔 쇼는 과감히 요소를 덜어낸 야외 런웨이로 구성되었으며, 전임자의 극적인 연출보다 어디까지나 의상 자체를 전면에 내세운 무대였다.이번 컬렉션은 절제된 미니멀리즘을 바탕으로 대담하고 볼륨감 있는 실루엣을 구축하면서, 무엇보다 정교한 재단과 패브릭의 움직임에 초점을 맞추고 있다.Pierpaolo…</p>
+          <time>Jul 08 · 18:34</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fcharli-xcx-intersects-music-fashion-and-film-for-upcoming-album-listening-sessions-news-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/charli-xcx-intersects-music-fashion-and-film-for-upcoming-album-listening-sessions-news" target="_blank" rel="noopener">Charli XCX, 음악·패션·영화를 잇는 뉴 앨범 리스닝 세션 월드 투어</a></h3>
+          <p>요약 Charli XCX가 다층적인 크리에이티브를 한데 모은 독점 앨범 리스닝 세션 시리즈를 선보일 예정이다.다가오는 2026년 이니셔티브는 컨템포러리 팝 사운드, 하이패션 프레젠테이션, 시네마틱 필름 요소가 한 공간에서 직접 교차하는 실험적 플랫폼을 중심에 둔다.Variety 공식 보도에 따르면, 이 팝 아이콘은 이번 프로젝트를 통해 전통적인 앨범…</p>
+          <time>Jul 08 · 18:31</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fliterary-sport-xero-shoes-00.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/literary-sport-xero-shoes-genesis-sandal" target="_blank" rel="noopener">가장 시크한 맨발 샌들, 이제 Literary Sport에서 만난다</a></h3>
+          <p>패션 인사들 사이에서 조용히 시크한 액티브웨어의 새로운 기준으로 부상한 캐나다 레이블 리터러리 스포츠(Literary Sport)가 이제 맨발 샌들에 새롭게 주목하게 한다.이번 최신 협업을 위해 브랜드는 제로슈즈(Xero Shoes)와 손잡고, 2009년 처음 선보인 이 풋웨어 브랜드의 오리지널 샌들 제네시스(Genesis)를 재해석했다. 멕시코…</p>
+          <time>Jul 08 · 16:46</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Flego-pokemon-arcanine-set-release-info-000.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/lego-pokemon-arcanine-set-release-info" target="_blank" rel="noopener">LEGO와 Pokémon, 아르카닌 세트로 되살린 관동의 불꽃 스피릿</a></h3>
+          <p>요약 LEGO Group이 아이코닉한 불꽃 타입 포켓몬 아르카닌을 테마로 한 프리미엄 18+ 전용 빌딩 키트의 예약 판매를 공식 오픈했다.총 1,190피스로 구성된 이 성인용 모델은 높이 약 6인치의 존재감 있는 사이즈로, 집이나 사무실 어디에 두어도 시선을 사로잡는 인테리어 오브제로 기능한다.컬렉터블 피겨는 머리, 입, 꼬리, 다리, 발 등 전신에 걸친…</p>
+          <time>Jul 08 · 16:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fyw-0.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/mike-young-world-festival-10k" target="_blank" rel="noopener">Max B 빼고, MIKE의 Young World Fest 나머지 라인업 완전 정리</a></h3>
+          <p>이번 주말, MIKE의 Young World Festival이 다시 한 번 New York City를 찾는다. Brooklyn을 기반으로 활동하는 래퍼 MIKE와 그의 레이블 10k가 이끄는 2026년 Young World는 전 연령 대상 무료 페스티벌의 다섯 번째 에디션으로, 7월 11일 토요일 Bedford‑Stuyvesant의 Herbert Von…</p>
+          <time>Jul 08 · 16:01</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2026%2F07%2Fhavaianas-top-nations-collection-flip-flops-unboxing-0.jpg?w=800&amp;amp;cbr=1&amp;amp;q=90&amp;amp;fit=max')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Hypebeast KR</span></div>
+          <h3><a href="https://hypebeast.kr/2026/7/havaianas-top-nations-collection-flip-flops-unboxing" target="_blank" rel="noopener">언박싱: 전 세계 축구 문화를 담은 havaianas ‘Top Nations’ 컬렉션</a></h3>
+          <p>2026년 축구 최고의 순간을 향해 완벽히 기동 준비를 마친 havaianas가 새롭게 선보이는Top Nations 컬렉션으로 본격적인 행보에 나선다. 1962년부터 이어온 브라질 오리지널 풋웨어 브랜드로서의 진정성 있는 헤리티지를 바탕으로 한 이번 신제품은, 국제적인 전통에서 뿜어져 나오는 축제의 에너지와 생동감 넘치는 모멘텀, 그리고 부인할 수 없는…</p>
+          <time>Jul 08 · 16:00</time>
+        </div>
+      </article></div></div></div>
+      </section><section class="panel" id="tab-tech-ai">
+        <header class="sec-hd"><h2>💻 Tech &amp; AI</h2><span class="rule"></span></header>
+        <p class="sec-brief">Latest: Truecaller clashes with India’s telecom regulator over anti… (TechCrunch)</p>
+        <div class="slide-nav"><button class="sl-btn prev">‹</button><span class="sl-hint">Swipe or tap arrows for more</span><button class="sl-btn next">›</button></div><div class="slide-track"><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/truecaller-clashes-with-indias-telecom-regulator-over-anti-spam-rules/" target="_blank" rel="noopener">Truecaller clashes with India’s telecom regulator over anti</a></h3>
+          <p>The caller ID company says users are increasingly ignoring and blocking calls from India&#x27;s dedicated business number series.</p>
+          <time>Jul 09 · 02:30</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://media.wired.com/photos/6a4eda84351e3bcb2e38a372/master/pass/GettyImages-2262457818.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Wired</span></div>
+          <h3><a href="https://www.wired.com/story/one-of-metas-offices-was-briefly-overtaken-by-a-rogue-squirrel/" target="_blank" rel="noopener">One of Meta’s Offices Was Briefly Overtaken by a Rogue Squirrel</a></h3>
+          <p>The animal escaped after apparently arriving inside a package at Meta&#x27;s Bangkok office, injuring one employee before finally being caught.</p>
+          <time>Jul 08 · 23:53</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/despite-misgivings-judge-approves-elon-musks-1-5-million-sec-settlement/" target="_blank" rel="noopener">Despite ‘misgivings,’ judge approves Elon Musk’s $1.5M SEC settlement</a></h3>
+          <p>The saga of Musk&#x27;s tussle with the SEC over how he disclosed his growing stake in Twitter (now X) has come to an end.</p>
+          <time>Jul 08 · 23:11</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/lovable-reportedly-in-talks-to-double-its-valuation-to-13-2b/" target="_blank" rel="noopener">Lovable reportedly in talks to double its valuation to $13.2B</a></h3>
+          <p>The $300 million round is expected to be led by Menlo Ventures, Sifted reported.</p>
+          <time>Jul 08 · 22:41</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>TH</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">The Verge</span></div>
+          <h3><a href="https://www.theverge.com/tech/963138/meta-smart-glasses-recording-super-sensing-ai" target="_blank" rel="noopener">Meta is reportedly working on smart glasses that would be recording all the time</a></h3>
+          <p>Meta might be the next company to make an always-on AI wearable. The company is working on prototype &quot;super sensing&quot; always-aware smart glasses that could continuously record audio and snap photos…</p>
+          <time>Jul 08 · 22:37</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/feds-demand-autonomous-vehicle-companies-stop-interfering-with-first-responders/" target="_blank" rel="noopener">Feds demand autonomous vehicle companies stop interfering with first responders</a></h3>
+          <p>The National Highway Traffic Safety Administration said emergency scenes are not &quot;edge cases.&quot;</p>
+          <time>Jul 08 · 21:49</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://cdn.arstechnica.net/wp-content/uploads/2026/07/GettyImages-2261090247-500x500.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Ars Technica</span></div>
+          <h3><a href="https://arstechnica.com/ai/2026/07/we-cannot-choose-to-become-idiots-the-ai-cheating-scandal-roiling-brown-university/" target="_blank" rel="noopener">Suspecting AI cheating, Ivy League prof ordered an in-person final; scores fell 50%</a></h3>
+          <p>AI cheating leads to &quot;a failed society,&quot; professor says.</p>
+          <time>Jul 08 · 21:42</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://media.wired.com/photos/6a4d0ba71ec7b7e789dcf997/master/pass/InvestmentFoot_Lead.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Wired</span></div>
+          <h3><a href="https://www.wired.com/story/messi-ronaldo-tech-portfolios-salah-playing-a-different-game/" target="_blank" rel="noopener">Messi and Ronaldo Are Building Tech Portfolios. Mo Salah Is Playing a Different Game</a></h3>
+          <p>Lionel Messi and Cristiano Ronaldo are betting on AI, health tech, and startups. Mohamed Salah is taking a more traditional route beyond football.</p>
+          <time>Jul 08 · 21:08</time>
+        </div>
+      </article></div></div><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/googles-deepfake-detector-system-used-to-debunk-mcconnell-hoax-pic/" target="_blank" rel="noopener">Google’s deepfake detector system used to debunk McConnell hoax pic</a></h3>
+          <p>Earlier this week, a picture seemed to show Kentucky Senator Mitch McConnell covered in tubes in a hospital bed in a state of extreme distress. It turned out to be an AI-generated fake.</p>
+          <time>Jul 08 · 20:37</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/with-eu-backing-quantumdiamonds-aims-to-speed-up-chip-manufacturing/" target="_blank" rel="noopener">With EU backing, QuantumDiamonds aims to speed up chip manufacturing</a></h3>
+          <p>Like its U.S. counterpart, the European Chips Act aims to foster the semiconductor industry — in part thanks to state subsidies. One of the beneficiaries is QuantumDiamonds, a German startup that…</p>
+          <time>Jul 08 · 20:29</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://media.wired.com/photos/6a4e9e33b7497b81a1eac2ad/master/pass/GettyImages-458090277.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Wired</span></div>
+          <h3><a href="https://www.wired.com/story/the-ftc-settlement-with-john-deere-is-a-huge-win-for-the-right-to-repair-movement/" target="_blank" rel="noopener">The FTC Settlement With John Deere Is a Huge Win for the Right-to</a></h3>
+          <p>After more than a decade of pushback, farmers and repair advocates have won access to equipment and services John Deere had long kept under its control.</p>
+          <time>Jul 08 · 20:27</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://media.wired.com/photos/6a4d3e5ad99ed47ae9e00cc8/master/pass/AI-Lab-I-Made-A-Self-Improving-AI-Business.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Wired</span></div>
+          <h3><a href="https://www.wired.com/story/frontier-labs-arent-the-only-ones-pursuing-self-improving-ai/" target="_blank" rel="noopener">I Built a Self-Improving AI, and So Can You</a></h3>
+          <p>Experiments in using AI to build AI show that the future doesn’t just belong to the frontier labs.</p>
+          <time>Jul 08 · 20:09</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>TE</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">TechCrunch</span></div>
+          <h3><a href="https://techcrunch.com/2026/07/08/autonomous-drone-delivery-startup-manna-plots-major-u-s-expansion/" target="_blank" rel="noopener">Autonomous drone delivery startup Manna plots major US expansion</a></h3>
+          <p>Manna is launching a U.S. operations and manufacturing facility in Tulsa, Oklahoma, that will eventually employ 1,000 people.</p>
+          <time>Jul 08 · 20:06</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>TH</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">The Verge</span></div>
+          <h3><a href="https://www.theverge.com/gadgets/962999/samsung-unpacked-z-fold-flip-wide-reserve-credit-preorder" target="_blank" rel="noopener">Get a $30 credit when you reserve Samsung’s upcoming Galaxy phones</a></h3>
+          <p>Even though they haven’t been officially announced yet, Samsung is giving you a chance to save some cash when you preorder what we’re expecting to be the brand’s updated Galaxy Z Fold phones. The…</p>
+          <time>Jul 08 · 20:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://cdn.arstechnica.net/wp-content/uploads/2026/07/GettyImages-2261524889-500x500.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Ars Technica</span></div>
+          <h3><a href="https://arstechnica.com/tech-policy/2026/07/lawsuit-grok-user-made-7k-child-sex-images-xai-only-reported-one-gang-rape-prompt/" target="_blank" rel="noopener">Lawsuit: Man used Grok to make 7K sex images of stepdaughter, then shot himself</a></h3>
+          <p>More young girls sue X over Grok CSAM; X accused of shielding child predators.</p>
+          <time>Jul 08 · 19:56</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb" style="background-image:url('https://media.wired.com/photos/6a4d4be1cd42662145e2207c/master/pass/Peter-Thiel-Husband-Attacked-Flight-Attendant-With-Cooler-Bag-Business-1532801923.jpg')"></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">Wired</span></div>
+          <h3><a href="https://www.wired.com/story/peter-thiels-husband-sued-a-flight-attendant-who-says-he-assaulted-her-on-a-private-jet/" target="_blank" rel="noopener">Peter Thiel’s Husband Sued a Flight Attendant Who Says He Assaulted Her on a Private Jet</a></h3>
+          <p>Matthew Danzeisen’s lawyer says the case is a “shakedown about a bag” that brushed someone’s leg. Stefanie Bojar says she was injured aboard the jet—and that the lawsuit is a bullying tactic.</p>
+          <time>Jul 08 · 19:49</time>
+        </div>
+      </article></div></div></div>
+      </section><section class="panel" id="tab-travel">
+        <header class="sec-hd"><h2>✈️ Travel</h2><span class="rule"></span></header>
+        <p class="sec-brief">Trending: &quot;best places visit&quot;. Latest: Laos Overtakes Japan, China, Thailand And More Countries As South… (GNews Asia Travel)</p>
+        <div class="slide-nav"><button class="sl-btn prev">‹</button><span class="sl-hint">Swipe or tap arrows for more</span><button class="sl-btn next">›</button></div><div class="slide-track"><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5zREQ1UkxQUWpvV1Jyb0htRUpPeE1IUnVTQ2xTTnZlSThtLWdQckpXNk41S3lnM0p1TWNfTE1PeEdiVHlvcHM0UWpkdElHNGNLTk9zcHJWUmxhMEdONDJ0UjlxLWx5ek0tWTVINTd3?oc=5" target="_blank" rel="noopener">Laos Overtakes Japan, China, Thailand And More Countries As Southeast Asia’s New Tourism Powerhouse Welcomes Over Two Million International Visitors In 2026, Triggering A Historic Travel Boom And Accelerating Unprecedented Growth</a></h3>
+          <p>Laos Overtakes Japan, China, Thailand And More Countries As Southeast Asia’s New Tourism Powerhouse Welcomes Over Two Million International Visitors In 2026, Triggering A Historic Travel Boom And…</p>
+          <time>Jul 09 · 03:34</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1UZzM0cGlEbUhBZEFhYk41SGs2S2s3T2drU0RaTlVPZ1IxdFEwTkNGdGM1LXhVdzJFZjlqLVVxazhwZU5UdGN4Z28wOWpPXzVObThOMGxoZ0xRdHRMakJjeG9LVW40Z3NjZHVnMTJn?oc=5" target="_blank" rel="noopener">China Aligns With South Korea, Japan, Australia, and More as Vietnam Targets Twenty-Five Million International Visitors in 2026 Amid Strong Tourism Growth</a></h3>
+          <p>China Aligns With South Korea, Japan, Australia, and More as Vietnam Targets Twenty-Five Million International Visitors in 2026 Amid Strong Tourism Growth Travel And Tour World</p>
+          <time>Jul 08 · 05:49</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9QeUpneWZraGlDMEVZa0V5SE9oWGxmQzNDR0NuNnRreEVybnJlNkljYkpqU3lVSVhiU21ld0ZTMlZETXJfZlpKYXk0dXVCZThjbDEzRHQ2bGRFN09oVDI3UEl2Yml3eGRDTmxfWkRB?oc=5" target="_blank" rel="noopener">China Aligns With Vietnam, Taiwan, Japan, Hong Kong and More as South Korea’s Tourism Recovery Gains Momentum, Driving Massive International Visitor Growth Across Seoul, Busan and Regional Destinations</a></h3>
+          <p>China Aligns With Vietnam, Taiwan, Japan, Hong Kong and More as South Korea’s Tourism Recovery Gains Momentum, Driving Massive International Visitor Growth Across Seoul, Busan and Regional…</p>
+          <time>Jul 07 · 07:15</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Travel Blogs</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxQMUE4cDQ4dS1xOVZUNFBydEVMSU5oTjIxUnhTejRlaFZuNEIxVlZGdmlhNEdfQ0g2VXBFd052bjJCZzJHTU90QkxSelVGcEVmc0hLN2VuT3pxeVJONDRqR2JyTFBjTDk5T3Y3by15WVJlNzBiUlR4dXVQNV9DX3JwVEt6VlltVTJwaGYzSHFJVmwwS3RE?oc=5" target="_blank" rel="noopener">Top Summer Travel Trends for 2026</a></h3>
+          <p>Top Summer Travel Trends for 2026 TravelAge West</p>
+          <time>Jul 06 · 07:00</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE52RFRBQlhtdENZRjdQMnM4dGp3WEl6M2VZNkhLMXR4dVItVDlBSkt4MnV6c283a1RhSUFjS1ZjU3A2bmJPQ19TMngzYmtBdF9FeEk3blFEYmQ2N3Z3WlJ2VVc4dTllX1dkOHRTX1pB?oc=5" target="_blank" rel="noopener">Japan Aligns With South Korea, Vietnam, Singapore and More as Asia Experiences a Sharp Tourism Realignment Fuelled by Chinese Outbound Recovery, Aviation Cost Pressures and Intensifying Competition Impacting Thailand’s 2026 Projections</a></h3>
+          <p>Japan Aligns With South Korea, Vietnam, Singapore and More as Asia Experiences a Sharp Tourism Realignment Fuelled by Chinese Outbound Recovery, Aviation Cost Pressures and Intensifying Competition…</p>
+          <time>Jul 06 · 03:40</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTFB1MXpGWmFiUU9sMWFscGNjdGhiS2d4dU5HZFNOYmNRQzU4YkNkM0tMeHQ1dGdIODQ1OVhUd1NmcTFxYVUwREFQNWRHXzlQNzhjeGJCWUNPcGpGdy1OS2pmbF9pMzlodW1salZqN1l3?oc=5" target="_blank" rel="noopener">Thailand Sets the Pace While Singapore, Japan, Indonesia, Vietnam, China, South Korea and Others Intensify the Race for Premium Travellers in 2026: Discover What’s Driving the High-Value Travel Boom</a></h3>
+          <p>Thailand Sets the Pace While Singapore, Japan, Indonesia, Vietnam, China, South Korea and Others Intensify the Race for Premium Travellers in 2026: Discover What’s Driving the High-Value Travel Boom…</p>
+          <time>Jul 05 · 23:19</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOZGEyb3h4YlJRRWpNM2lSaTJCdVVKN1pWcTJOQVlRQkxLcl95VFp0RWVLQ0hYY0tnQ2xzdkJUcl81bHJHSWRuVjVmdDRraG16ak9lRDFrZzlMLVRESDBGa1RPQldkWFd2ZDRtMXo2eEVGMS1FcWNwNDJON3dNT21kb2pSVUxzTGVDQ0tWV2tZVlVRNndDQ281VHN5QnhEcFd0dDRLOFBFWlhyTUE3T0FLZzU4T0xtcFU?oc=5" target="_blank" rel="noopener">Japan&#x27;s Tourism Collapse: Chinese Visitor Exodus Reshapes Asia-Pacific Travel as South Korea Captures Diverted Demand in 2026</a></h3>
+          <p>Japan&#x27;s Tourism Collapse: Chinese Visitor Exodus Reshapes Asia-Pacific Travel as South Korea Captures Diverted Demand in 2026 Nomad Lawyer</p>
+          <time>Jul 04 · 15:35</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZ29yaWMzTHhuR291bk9KTEkzSk1TRmZ0WUVUYl9jZHZwMGxoRWZYOUdqUTFsYVNmeXB2U1hlMGV0ZUwzMUwwbXFLWENBcGtxOG9NOEVROTk4TEdPNTNlemJXNkI3Z1RDaUFrOXIzMXlRRjVyUDZHWV9xc3FpYmppWWRmV3hmdzBtU1VFUEJ6RVVtOFV5eDVuenBRWTJDQko4SzJKLTljejkycE0?oc=5" target="_blank" rel="noopener">Australia, US, Japan, Vietnam Visa Changes July 2026: New Fees, Income Thresholds, Health Checks Explained</a></h3>
+          <p>Australia, US, Japan, Vietnam Visa Changes July 2026: New Fees, Income Thresholds, Health Checks Explained Nomad Lawyer</p>
+          <time>Jul 04 · 14:43</time>
+        </div>
+      </article></div></div><div class="slide-page"><div class="grid"><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9ObTIzNFZPOGt6b1VJRUV1WDhFX2p1LU9PUXo4X0FTV1FtM0wtcHBrT1RtRWVVaEJaNWpua0kzRlJEZ3JXOFlSOFdKbld0RnlKaW5NSkotWFh4UHRRdmxYYW9sNHJTV2lsSnE5MTFR?oc=5" target="_blank" rel="noopener">Vietnam Links With China, South Korea, Russia, Taiwan, United States, Cambodia, India and Japan as a Powerful Inbound Travel Reset Sees US Demand Overtake Cambodia While Japan Remains Eighth in First-Half 2026</a></h3>
+          <p>Vietnam Links With China, South Korea, Russia, Taiwan, United States, Cambodia, India and Japan as a Powerful Inbound Travel Reset Sees US Demand Overtake Cambodia While Japan Remains Eighth in…</p>
+          <time>Jul 04 · 07:54</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9IT1VfUVVLbnJ4NXdKUEQ5SDQwbTdQcGNaVjFZZE9SdEpnVjlPOS1rSXNEcEJIdHQwZ25zbC1qTGJQV2JPeDhscUZHdnNsbUZYRmI5UDZGT1BhUW0tSjlPYWFlY0lPT0x5bFBwNXJ3?oc=5" target="_blank" rel="noopener">Vietnam Pairs Up with India, Australia, Sri Lanka, Japan and South Korea as Long Thanh International Airport Prepares for Late-2026 Launch, Expanding Asia-Pacific Air Connectivity and Opening New Travel Opportunities</a></h3>
+          <p>Vietnam Pairs Up with India, Australia, Sri Lanka, Japan and South Korea as Long Thanh International Airport Prepares for Late-2026 Launch, Expanding Asia-Pacific Air Connectivity and Opening New…</p>
+          <time>Jul 03 · 12:52</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZZUNaRUdfMWlMVlRwa1BYRFBhQ2U2blIyU0NIRm0wOVpUeFg2REp1VmhsaFU5dW9xVEloUFVGLWlOYWN2R3RCQXlEbTFNTnpFRnU5Q2JpS2RnXzdlMFZnWU9vejR1UDlBSkExbzVB?oc=5" target="_blank" rel="noopener">Russia Shockingly Overtakes Canada, India, Japan, Germany, And More Countries In Acceralating Vietnam As Fastest Emerging Tourist Powerhouse With Record-Breaking Double Digit Arrivals, Soaring Premium Spending Surge, And Rapid Expansion Of Lu</a></h3>
+          <p>Russia Shockingly Overtakes Canada, India, Japan, Germany, And More Countries In Acceralating Vietnam As Fastest Emerging Tourist Powerhouse With Record-Breaking Double Digit Arrivals, Soaring…</p>
+          <time>Jul 03 · 05:53</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE83MzNqSlc5eDJxcDRnR0dQVXctdjMwWU5mTmNTUGU4Yzl0TmRjUktLUHBpRld2Q3Bfa0VsSHhqQ2hBdkRiRkFBbG5aN1E5R3pzYVU2aUFISE14RTBxSEFNbm12N1FwTWlwZ3IwUHRR?oc=5" target="_blank" rel="noopener">Vietnam Partners With Singapore, Japan, Malaysia and Thailand to Reinforce Border Health Security With New Disease Prevention Rules That Could Affect Future Travel—Here’s What You Need to Know</a></h3>
+          <p>Vietnam Partners With Singapore, Japan, Malaysia and Thailand to Reinforce Border Health Security With New Disease Prevention Rules That Could Affect Future Travel—Here’s What You Need to Know Travel…</p>
+          <time>Jul 03 · 04:28</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Travel Blogs</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBZNnJCWklScXg1Z0FUcEdud2F5WTByVkh3WmFBVzdFakZXYnp4REFnSjRfdDZjXzFjYzgtc1BLUnF1U2I2R3M2WGxsQ1pvSDFsY3dNUG5uX29YXzlXd2FZYWJSTzdYOGZGaFYxX2lkVzRKRjhYdExHSTlLQUJBUQ?oc=5" target="_blank" rel="noopener">13 best places to visit in November, according to the travel editors</a></h3>
+          <p>13 best places to visit in November, according to the travel editors CN Traveller</p>
+          <time>Jul 02 · 17:44</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Travel Blogs</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPRzlSX3NZUVJ4SjZJU3VYX3EyeGZTRVZrb2dtOWpfQWZfbDlLVEhKUjl3Mm5kdjdpc0tFMERTT1NueFpwR3BLOWpEbjFsY2JPMmFNYWVlRlh0Uk83NExkcmx4SU51dW5fUW5sVEJFX2J0MlVoWjE1X25ja2hzR1lWNG11eFF3SncyNzZqRmtGQUx5bHktSVFMZThEZzhaQXRKVmQ4WFBmVGc2aF92am1N?oc=5" target="_blank" rel="noopener">Visit Shipshewana Named Midwest Travel Network Destination Of The Year</a></h3>
+          <p>Visit Shipshewana Named Midwest Travel Network Destination Of The Year InkFreeNews.com</p>
+          <time>Jun 30 · 13:22</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Asia Travel</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9iWWN0MjdRTHQ5eTF6Ml9CR0Fod3NjLXhHMzRSMWZXRkN6ZzhrRlVMWEN5LXc1UWJUcDZtRHVYOE9xWXpNUDBJSW1HMTdkSmMzQVRsaXdwTGYzY1BGaWx3V01PQ3NGSmZjdXY3Vnl3?oc=5" target="_blank" rel="noopener">China Aligns With Russia, Vietnam, Philippines and Others as Japan Visa Fee Surge Sparks Global Shock Amid Five Times Increase and Tripled Departure Tax from July 2026</a></h3>
+          <p>China Aligns With Russia, Vietnam, Philippines and Others as Japan Visa Fee Surge Sparks Global Shock Amid Five Times Increase and Tripled Departure Tax from July 2026 Travel And Tour World</p>
+          <time>Jun 30 · 09:43</time>
+        </div>
+      </article><article class="card">
+        <div class="thumb thumb-empty"><span>GN</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="src">GNews Adventure</span><span class="badge">2 sources</span></div>
+          <h3><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPc3hTSWNGZW93S0Y0b0NNTHc5RmM3aWozRkM5dWEtS3RKQURBRmNQdGExQWFmUjA5ZTJlcGM0YVk2ZXR6bjhCN0pjdm1LX0twS3FubGhpZm01ZVdQdU80cG5USVM5QXlPRk4xTi1DUDAzME1DRzdoMlZnMVc4M0tyMFlyWdIBiAFBVV95cUxQTkU1VEFsOGw5ZmgwOWJVZ1RPUjZhUzMxTXJqc3JLSU9oN1hIWkVkM0c1bENQVGdzVl9QWTlTc2MxVS1SaEtrSnpvcm1FMWxOZk9TdWJVMG1MeE1iZ3pPRDVtTE5lTmpjcjh1UDJLclJUdVRESnZiZDN0WlpuOEVzMmJpTU9Xa3Bf?oc=5" target="_blank" rel="noopener">Hidden gem city voted one of the best places to visit in UK 2026 - not London or York</a></h3>
+          <p>Hidden gem city voted one of the best places to visit in UK 2026 - not London or York The Mirror</p>
+          <time>Jun 30 · 07:48</time>
+        </div>
+      </article></div></div></div>
+      </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h4>Sources</h4>
+    <p>Vogue · Harper's Bazaar · Elle · Who What Wear · Highsnobiety · Hypebeast · RUSSH · TechCrunch · The Verge · Ars Technica · Wired · Nomadic Matt · Lonely Planet · Google News</p>
+    <details>
+      <summary>Feed diagnostics (latest run)</summary>
+      <ul class="diag"><li class="ok">✓ Elle Vietnam — 10 items <span class="durl">https://elle.vn/feed</span></li><li class="err">✗ Harper&#x27;s Bazaar VN — ConnectionError <span class="durl">https://harpersbazaar.vn/feed</span></li><li class="ok">✓ GNews VN Fashion — 96 items <span class="durl">https://news.google.com/rss/search?q=th%E1%BB%9Di+trang+Vi%E</span></li><li class="ok">✓ GNews VN Streetwear — 77 items <span class="durl">https://news.google.com/rss/search?q=streetwear+vietnam+xu+h</span></li><li class="err">✗ Vogue Singapore — HTTP 403 <span class="durl">https://vogue.sg/feed</span></li><li class="ok">✓ Harper&#x27;s Bazaar SG — 10 items <span class="durl">https://www.harpersbazaar.com.sg/feed</span></li><li class="err">✗ Elle Singapore — HTTP 403 <span class="durl">https://elle.com.sg/feed</span></li><li class="ok">✓ GNews SG Fashion — 79 items <span class="durl">https://news.google.com/rss/search?q=Singapore+fashion+trend</span></li><li class="err">✗ Vogue Australia — HTTP 403 <span class="durl">https://www.vogue.com.au/feed</span></li><li class="err">✗ Harper&#x27;s Bazaar AU — timeout <span class="durl">https://www.harpersbazaar.com.au/feed</span></li><li class="ok">✓ RUSSH — 10 items <span class="durl">https://www.russh.com/feed/</span></li><li class="ok">✓ GNews AU Fashion — 100 items <span class="durl">https://news.google.com/rss/search?q=Australian+fashion+tren</span></li><li class="ok">✓ Who What Wear — 50 items <span class="durl">https://www.whowhatwear.com/rss</span></li><li class="ok">✓ Vogue US — 30 items <span class="durl">https://www.vogue.com/feed/rss</span></li><li class="ok">✓ Highsnobiety — 15 items <span class="durl">https://www.highsnobiety.com/feed/</span></li><li class="ok">✓ Hypebeast — 20 items <span class="durl">https://hypebeast.com/feed</span></li><li class="ok">✓ GNews US Fashion — 100 items <span class="durl">https://news.google.com/rss/search?q=fashion+trends+2026+sum</span></li><li class="ok">✓ Hypebeast KR — 20 items <span class="durl">https://hypebeast.kr/feed</span></li><li class="ok">✓ GNews K-Fashion — 71 items <span class="durl">https://news.google.com/rss/search?q=Korean+fashion+K-fashio</span></li><li class="ok">✓ GNews Seoul Street — 73 items <span class="durl">https://news.google.com/rss/search?q=Seoul+street+style+tren</span></li><li class="ok">✓ TechCrunch — 20 items <span class="durl">https://techcrunch.com/feed/</span></li><li class="ok">✓ The Verge — 10 items <span class="durl">https://www.theverge.com/rss/index.xml</span></li><li class="ok">✓ Ars Technica — 20 items <span class="durl">https://feeds.arstechnica.com/arstechnica/index</span></li><li class="ok">✓ Wired — 50 items <span class="durl">https://www.wired.com/feed/rss</span></li><li class="ok">✓ GNews AI — 100 items <span class="durl">https://news.google.com/rss/search?q=artificial+intelligence</span></li><li class="ok">✓ GNews Tech Industry — 100 items <span class="durl">https://news.google.com/rss/search?q=tech+industry+jobs+hiri</span></li><li class="ok">✓ Nomadic Matt — 10 items <span class="durl">https://www.nomadicmatt.com/feed/</span></li><li class="err">✗ Lonely Planet — HTTP 404 <span class="durl">https://www.lonelyplanet.com/feed.xml</span></li><li class="ok">✓ GNews Travel Blogs — 76 items <span class="durl">https://news.google.com/rss/search?q=travel+blog+experience+</span></li><li class="ok">✓ GNews Asia Travel — 73 items <span class="durl">https://news.google.com/rss/search?q=travel+Southeast+Asia+V</span></li><li class="ok">✓ GNews Adventure — 77 items <span class="durl">https://news.google.com/rss/search?q=best+places+travel+hidd</span></li></ul>
+    </details>
+    <p class="disc">Headlines and descriptions sourced directly from official RSS feeds. Click any article to read the full story at its original source.</p>
+  </div>
+</footer>
+
+<script>
+function activate(id){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.target===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));
+  window.scrollTo({top:0,behavior:'instant'});
+}
+document.querySelectorAll('.tab,.snap-link,.snap-more').forEach(el=>
+  el.addEventListener('click',()=>activate(el.dataset.target)));
+document.querySelectorAll('.panel').forEach(p=>{
+  const t=p.querySelector('.slide-track');
+  if(!t)return;
+  p.querySelectorAll('.sl-btn').forEach(b=>
+    b.addEventListener('click',()=>t.scrollBy({left:b.classList.contains('next')?t.clientWidth:-t.clientWidth,behavior:'smooth'})));
+});
+</script>
+</body>
+</html>
